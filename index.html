@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello World App</title>
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+</head>
+<body>
+    <div id="loginContainer">
+        <div id="g_id_onload"
+             data-client_id="YOUR_GOOGLE_CLIENT_ID"
+             data-callback="handleCredentialResponse">
+        </div>
+        <div class="g_id_signin" data-type="standard"></div>
+    </div>
+    <div id="messageContainer" style="display: none;">
+        <h1 id="message"></h1>
+    </div>
+
+    <script>
+        const DEPLOYMENT_ID = 'YOUR_APPS_SCRIPT_DEPLOYMENT_ID';
+        const API_URL = `https://script.google.com/macros/s/${DEPLOYMENT_ID}/exec`;
+
+        function handleCredentialResponse(response) {
+            const responsePayload = parseJwt(response.credential);
+            const userEmail = responsePayload.email;
+            
+            document.getElementById('loginContainer').style.display = 'none';
+            document.getElementById('messageContainer').style.display = 'block';
+            
+            fetchHelloMessage(userEmail);
+        }
+
+        function parseJwt(token) {
+            const base64Url = token.split('.')[1];
+            const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+            const jsonPayload = decodeURIComponent(atob(base64).split('').map(function(c) {
+                return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+            }).join(''));
+            return JSON.parse(jsonPayload);
+        }
+
+        function fetchHelloMessage(email) {
+            fetch(`${API_URL}?email=${encodeURIComponent(email)}`)
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('message').textContent = data.message;
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    document.getElementById('message').textContent = 'An error occurred.';
+                });
+        }
+    </script>
+</body>
+</html>
