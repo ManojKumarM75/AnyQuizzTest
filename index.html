@@ -42,16 +42,21 @@
         }
 
         function fetchHelloMessage(email) {
-            fetch(`${API_URL}?email=${encodeURIComponent(email)}`)
-                .then(response => response.json())
-                .then(data => {
-                    document.getElementById('message').textContent = data.message;
-                })
-                .catch(error => {
-                    console.error('Error:', error);
-                    document.getElementById('message').textContent = 'An error occurred.';
-                });
+            fetch(`${API_URL}?email=${encodeURIComponent(email)}`, {
+                method: 'GET',
+                mode: 'cors',
+                credentials: 'include'
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('message').textContent = data.message;
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                document.getElementById('message').textContent = 'An error occurred.';
+            });
         }
+
     </script>
 </body>
 </html>
