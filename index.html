@@ -22,7 +22,7 @@
     </div>
 
     <script>
-        const DEPLOYMENT_ID = 'AKfycbxOeW82B0rzir7QZUOuoXaF1xJiDZV_c9mLuRH0dDQP1CJnkDNEkzsWDyKZp5iuG04A'//'YOUR_DEPLOYMENT_ID';
+        const DEPLOYMENT_ID = 'AKfycbwBUY3vGqj_7X32YIEgq4NApxJ1Ki9dwP_JuBUrN6vRLH8JLBwJLnhWDBEAOnAjhKv-'//'YOUR_DEPLOYMENT_ID';
         const API_URL = `https://script.google.com/macros/s/${DEPLOYMENT_ID}/exec`;
         
         let userEmail = '';
@@ -46,17 +46,18 @@
         }
 
         function fetchQuizQuestions() {
-            fetch(API_URL, {
+            fetch(`${API_URL}?function=getQuestions`, {
                 method: 'GET',
                 mode: 'cors'
             })
             .then(response => response.json())
             .then(data => {
-                quizQuestions = data;
+                quizQuestions = data.questions;
                 displayQuestions();
             })
             .catch(error => console.error('Error:', error));
         }
+
 
         function displayQuestions() {
             const questionsContainer = document.getElementById('questions');
@@ -91,16 +92,20 @@
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify({
-                    action: 'logAnswer',
-                    email: userEmail,
-                    questionId: questionId,
-                    answer: userAnswer
+                    function: 'submitAnswers',
+                    parameters: [{
+                        answers: JSON.stringify([{
+                            id: questionId,
+                            answer: userAnswer
+                        }])
+                    }]
                 })
             })
             .then(response => response.json())
             .then(data => console.log(data))
             .catch(error => console.error('Error:', error));
         }
+
     </script>
 </body>
 </html>
