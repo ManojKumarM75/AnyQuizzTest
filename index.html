@@ -18,3 +18,36 @@
   </script>
 </body>
 </html>
+--
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Google Sign-In Example</title>
+    <meta name="google-signin-client_id" content="44063799736-jl9n0up9qa94t8imacu9r0g4djf81ej1.apps.googleusercontent.com">
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+</head>
+<body>
+    <div class="g-signin2" data-onsuccess="onSignIn"></div>
+
+    <script>
+    function onSignIn(googleUser) {
+        var id_token = googleUser.getAuthResponse().id_token;
+        // Send the token to your Apps Script
+        sendTokenToAppsScript(id_token);
+    }
+
+    function sendTokenToAppsScript(token) {
+        fetch('https://script.google.com/macros/s/AKfycby9CH2fCIH0sWEHraqSnjVy166ufvsDJ-rDOr3ObefTHlUw4T7IPnm5uiw0x1ea_FMO/exec', {//YOUR_APPS_SCRIPT_WEB_APP_URL
+            method: 'POST',
+            mode: 'no-cors',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({token: token})
+        })
+        .then(response => console.log('Token sent to Apps Script'))
+        .catch(error => console.error('Error:', error));
+    }
+    </script>
+</body>
+</html>
