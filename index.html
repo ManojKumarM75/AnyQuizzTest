@@ -1,62 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hello World App</title>
-    <script src="https://accounts.google.com/gsi/client" async defer></script>
+  <base href="https://script.google.com/macros/s/AKfycbxmLl0gWdMUq7hFfgrcDg-17TThS_NuLHeDdZJSWIqCDzPD2focEhrSBlsJcD1quewg/exec"> 
 </head>
 <body>
-    <div id="loginContainer">
-        <div id="g_id_onload"
-             data-client_id= "44063799736-jl9n0up9qa94t8imacu9r0g4djf81ej1.apps.googleusercontent.com"
-             data-callback="handleCredentialResponse">
-        </div>
-        <div class="g_id_signin" data-type="standard"></div>
-    </div>
-    <div id="messageContainer" style="display: none;">
-        <h1 id="message"></h1>
-    </div>
+  <button onclick="googleSignIn()">Sign in with Google</button>
 
-    <script>
-        const DEPLOYMENT_ID = 'AKfycbzL9CxTpuUZoQj1RttHsSYzc1RGuPL5WhYvBa0i32ZStKpvO_9FrOQ4gXajBc82-9wY'//'YOUR_APPS_SCRIPT_DEPLOYMENT_ID';
-        const API_URL = `https://script.google.com/macros/s/${DEPLOYMENT_ID}/exec`;
+  <script>
+    function googleSignIn() {
+      google.script.run.withSuccessHandler(handleSignInUrl).getGoogleSignInUrl();
+    }
 
-        function handleCredentialResponse(response) {
-            const responsePayload = parseJwt(response.credential);
-            const userEmail = responsePayload.email;
-            
-            document.getElementById('loginContainer').style.display = 'none';
-            document.getElementById('messageContainer').style.display = 'block';
-            
-            fetchHelloMessage(userEmail);
-        }
-
-        function parseJwt(token) {
-            const base64Url = token.split('.')[1];
-            const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
-            const jsonPayload = decodeURIComponent(atob(base64).split('').map(function(c) {
-                return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
-            }).join(''));
-            return JSON.parse(jsonPayload);
-        }
-
-        function fetchHelloMessage(email) {
-            fetch(`${API_URL}?email=${encodeURIComponent(email)}`, {
-                method: 'GET',
-                mode: 'cors',
-                credentials: 'include'
-            })
-            .then(response => response.json())
-            .then(data => {
-                document.getElementById('message').textContent = data.message;
-            })
-            .catch(error => {
-                console.error('Error:', error);
-                document.getElementById('message').textContent = 'An error occurred.';
-            });
-        }
-
-    </script>
+    function handleSignInUrl(signInUrl) {
+      window.location.href = signInUrl;
+    }
+  </script>
 </body>
 </html>
