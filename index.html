@@ -1,27 +1,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <base href="https://script.google.com/macros/s/AKfycbxwb8hDyqHY1H20R1Aq-2XKPNBjB2OZU3O1toAPI5UDJjHPStBzNm1KBzfG2G9G0FVj/exec"> 
-  
-</head>
-<body>
-  <button onclick="googleSignIn()">Sign in with Google</button>
-
-  <script>
-    function googleSignIn() {
-      google.script.run.withSuccessHandler(handleSignInUrl).getGoogleSignInUrl();
-    }
-
-    function handleSignInUrl(signInUrl) {
-      window.location.href = signInUrl;
-    }
-  </script>
-</body>
-</html>
---
-<!DOCTYPE html>
-<html>
-<head>
     <title>Google Sign-In Example</title>
     <meta name="google-signin-client_id" content="44063799736-jl9n0up9qa94t8imacu9r0g4djf81ej1.apps.googleusercontent.com">
     <script src="https://apis.google.com/js/platform.js" async defer></script>
