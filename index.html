@@ -17,18 +17,20 @@
         sendTokenToAppsScript(response.credential);
     }
 
+
     function sendTokenToAppsScript(token) {
         fetch('https://script.google.com/macros/s/AKfycbwVaYnh8NBdFsQGR15IlVimX1qlqErSzaZJEIGcTevj3La-FNaJmXU_pcSQeWQq_Ku9/exec', { //YOUR_ACTUAL_APPS_SCRIPT_WEB_APP_URL
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({token: token})
-        })
-        .then(response => response.json())
-        .then(data => console.log('Response from Apps Script:', data))
-        .catch(error => console.error('Error:', error));
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({token: token})
+      })
+      .then(response => response.json())
+      .then(data => console.log('Response from Apps Script:', data))
+      .catch(error => console.error('Error:', error));
     }
+
     </script>
 </body>
 </html>
