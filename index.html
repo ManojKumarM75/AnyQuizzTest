@@ -2,52 +2,6 @@
 <html>
 <head>
     <title>Google Sign-In Example</title>
-    <script src="https://apis.google.com/js/api.js"></script>
-    
-</head>
-<body>
-    <button id="signIn">Sign In with Google</button>
-
-    <script>
-    
-        function initClient() {
-        gapi.client.init({
-            clientId: '44063799736-jl9n0up9qa94t8imacu9r0g4djf81ej1.apps.googleusercontent.com',
-            scope: 'profile email'
-        }).then(function() {
-            // Listen for sign-in state changes
-            gapi.auth2.getAuthInstance().isSignedIn.listen(updateSigninStatus);
-            // Handle the initial sign-in state
-            updateSigninStatus(gapi.auth2.getAuthInstance().isSignedIn.get());
-            // Attach click handler to the sign-in button
-            document.getElementById('signIn').onclick = handleSignIn;
-        });
-    }
-
-    function updateSigninStatus(isSignedIn) {
-        if (isSignedIn) {
-            var user = gapi.auth2.getAuthInstance().currentUser.get();
-            var id_token = user.getAuthResponse().id_token;
-            console.log('User is signed in. Token:', id_token);
-            // Send token to your server here
-        } else {
-            console.log('User is not signed in.');
-        }
-    }
-
-    function handleSignIn() {
-        gapi.auth2.getAuthInstance().signIn();
-    }
-
-    gapi.load('client:auth2', initClient);
-    </script>
-</body>
-</html>
---
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Google Sign-In Example</title>
     <script src="https://accounts.google.com/gsi/client" async defer></script>
 </head>
 <body>
