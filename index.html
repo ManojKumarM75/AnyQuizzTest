@@ -12,24 +12,21 @@
     <div class="g_id_signin" data-type="standard"></div>
 
     <script>
-        //('https://script.google.com/macros/s/AKfycby9CH2fCIH0sWEHraqSnjVy166ufvsDJ-rDOr3ObefTHlUw4T7IPnm5uiw0x1ea_FMO/exec', {//YOUR_APPS_SCRIPT_WEB_APP_URL
     function handleCredentialResponse(response) {
-        // This function will be called when the user successfully signs in
         console.log("Encoded JWT ID token: " + response.credential);
-        // You can send this token to your server for verification
         sendTokenToAppsScript(response.credential);
     }
 
     function sendTokenToAppsScript(token) {
-        fetch('YOUR_APPS_SCRIPT_WEB_APP_URL', {
+        fetch('https://script.google.com/macros/s/AKfycbwVaYnh8NBdFsQGR15IlVimX1qlqErSzaZJEIGcTevj3La-FNaJmXU_pcSQeWQq_Ku9/exec', { //YOUR_ACTUAL_APPS_SCRIPT_WEB_APP_URL
             method: 'POST',
-            mode: 'no-cors',
             headers: {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify({token: token})
         })
-        .then(response => console.log('Token sent to Apps Script'))
+        .then(response => response.json())
+        .then(data => console.log('Response from Apps Script:', data))
         .catch(error => console.error('Error:', error));
     }
     </script>
