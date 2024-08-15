@@ -17,20 +17,17 @@
         sendTokenToAppsScript(response.credential);
     }
 
-
     function sendTokenToAppsScript(token) {
-        fetch('https://script.google.com/macros/s/AKfycby7H3lfwZtN1O6Iw7LLbnmY3_ab0A8MlTG1CBgA_2UWCDosjFoZPjG51WPm7KuAfUfE/exec', { //YOUR_ACTUAL_APPS_SCRIPT_WEB_APP_URL
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({token: token})
-      })
-      .then(response => response.json())
-      .then(data => console.log('Response from Apps Script:', data))
-      .catch(error => console.error('Error:', error));
+        var script = document.createElement('script');
+        script.src = 'https://script.google.com/macros/s/AKfycbz_40oOLkw6zI-CU-1YjwvT-MxPaBdsiCsomBQEK4cDVlxYcFXxJFN57fbozjSWoWa4/exec?callback=handleResponse&token=' + encodeURIComponent(token);
+        document.body.appendChild(script);
     }
 
+    function handleResponse(data) {
+        console.log('Response from Apps Script:', data);
+        // Handle the response data here
+    }
     </script>
 </body>
 </html>
+
