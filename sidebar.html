@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <base href="https://script.google.com/macros/s/AKfycbxmLl0gWdMUq7hFfgrcDg-17TThS_NuLHeDdZJSWIqCDzPD2focEhrSBlsJcD1quewg/exec"> 
+</head>
+<body>
+  <script>
+    // Get the access token from the URL fragment (after successful login)
+    const hash = window.location.hash.substring(1);
+    const params = new URLSearchParams(hash);
+    const accessToken = params.get('access_token');
+
+    if (accessToken) {
+      google.script.run.withSuccessHandler(displayUserInfo).getUserInfo(accessToken);
+    }
+
+    function displayUserInfo(userInfo) {
+      document.body.innerHTML = `
+        <h2>Welcome, ${userInfo.name}!</h2>
+        <img src="${userInfo.picture}" alt="Profile Picture">
+        <p>Email: ${userInfo.email}</p>
+      `;
+    }
+  </script>
+</body>
+</html>
