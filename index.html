@@ -9,12 +9,30 @@
          data-client_id="44063799736-jl9n0up9qa94t8imacu9r0g4djf81ej1.apps.googleusercontent.com"
          data-callback="handleCredentialResponse">
     </div>
+    <div id="userInfo"></div>
     <div class="g_id_signin" data-type="standard"></div>
 
     <script>
     function handleCredentialResponse(response) {
         console.log("Encoded JWT ID token: " + response.credential);
+        
+        // Decode the JWT token
+        const payload = JSON.parse(atob(response.credential.split('.')[1]));
+        
+        // Display user info
+        displayUserInfo(payload);
+        
         sendTokenToAppsScript(response.credential);
+    }
+
+    function displayUserInfo(payload) {
+        const userInfoDiv = document.getElementById('userInfo');
+        userInfoDiv.innerHTML = `
+            <h2>User Information</h2>
+            <p>Name: ${payload.name}</p>
+            <p>Email: ${payload.email}</p>
+            <img src="${payload.picture}" alt="Profile Picture">
+        `;
     }
 
     function sendTokenToAppsScript(token) {
