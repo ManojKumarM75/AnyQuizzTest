@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Google Sign-In Example</title>
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+</head>
+<body>
+    <div id="g_id_onload"
+         data-client_id="44063799736-jl9n0up9qa94t8imacu9r0g4djf81ej1.apps.googleusercontent.com"
+         data-callback="handleCredentialResponse">
+    </div>
+    <div class="g_id_signin" data-type="standard"></div>
+
+    <script>
+    function handleCredentialResponse(response) {
+        console.log("Encoded JWT ID token: " + response.credential);
+        sendTokenToAppsScript(response.credential);
+    }
+
+    function sendTokenToAppsScript(token) {
+        var script = document.createElement('script');
+        script.src = 'https://script.google.com/macros/s/AKfycbz_40oOLkw6zI-CU-1YjwvT-MxPaBdsiCsomBQEK4cDVlxYcFXxJFN57fbozjSWoWa4/exec?callback=handleResponse&token=' + encodeURIComponent(token);
+        document.body.appendChild(script);
+    }
+
+    function handleResponse(data) {
+        console.log('Response from Apps Script:', data);
+        // Handle the response data here
+    }
+    </script>
+</body>
+</html>
+
