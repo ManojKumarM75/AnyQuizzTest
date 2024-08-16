@@ -35,6 +35,7 @@
             text-align: center;
         }
     </style>
+
 </head>
 <body>
     <div id="header">
@@ -42,15 +43,24 @@
         <div id="g_id_onload"
              data-client_id="44063799736-jl9n0up9qa94t8imacu9r0g4djf81ej1.apps.googleusercontent.com"
              data-callback="handleCredentialResponse"
-             data-auto_select="false">
+             data-auto_prompt="false">
         </div>
-        <div class="g_id_signin" data-type="standard" style="display: none;"></div>
         <button id="login-button" onclick="handleSignIn()">Sign In</button>
         <button id="logout-button" onclick="handleSignOut()">Sign Out</button>
     </div>
     <div id="message"></div>
 
     <script>
+    let googleAuth;
+
+    function initializeGoogleSignIn() {
+        google.accounts.id.initialize({
+            client_id: "44063799736-jl9n0up9qa94t8imacu9r0g4djf81ej1.apps.googleusercontent.com",
+            callback: handleCredentialResponse
+        });
+        googleAuth = google.accounts.id;
+    }
+
     function handleCredentialResponse(response) {
         console.log("Encoded JWT ID token: " + response.credential);
         sendTokenToAppsScript(response.credential, 'login');
@@ -77,17 +87,20 @@
     }
 
     function handleSignIn() {
-        document.querySelector('.g_id_signin div[role=button]').click();
+        googleAuth.prompt();
     }
 
     function handleSignOut() {
-        google.accounts.id.disableAutoSelect();
+        googleAuth.disableAutoSelect();
         sendTokenToAppsScript('', 'logout');
         document.getElementById('user-info').style.display = 'none';
         document.getElementById('login-button').style.display = 'inline-block';
         document.getElementById('logout-button').style.display = 'none';
         document.getElementById('message').textContent = '';
     }
+
+    // Initialize Google Sign-In when the page loads
+    window.onload = initializeGoogleSignIn;
     </script>
 </body>
 </html>
