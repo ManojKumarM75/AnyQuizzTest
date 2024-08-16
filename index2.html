@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Google Sign-In Example</title>
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        #header {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #f0f0f0;
+        }
+        #user-info {
+            margin-right: 10px;
+            display: none;
+        }
+        #login-button, #logout-button {
+            background-color: #4285F4;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+        #logout-button {
+            display: none;
+        }
+        #message {
+            margin-top: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="header">
+        <div id="user-info"></div>
+        <div id="g_id_onload"
+             data-client_id="44063799736-jl9n0up9qa94t8imacu9r0g4djf81ej1.apps.googleusercontent.com"
+             data-callback="handleCredentialResponse"
+             data-auto_select="false">
+        </div>
+        <div class="g_id_signin" data-type="standard" style="display: none;"></div>
+        <button id="login-button" onclick="handleSignIn()">Sign In</button>
+        <button id="logout-button" onclick="handleSignOut()">Sign Out</button>
+    </div>
+    <div id="message"></div>
+
+    <script>
+    function handleCredentialResponse(response) {
+        console.log("Encoded JWT ID token: " + response.credential);
+        sendTokenToAppsScript(response.credential, 'login');
+        updateUIAfterSignIn(response.credential);
+    }
+
+    function sendTokenToAppsScript(token, action) {
+        var script = document.createElement('script');
+        script.src = `https://script.google.com/macros/s/AKfycbz5LKXzUYGqnBWthl9VdVyZEmwZ5mugenRFOV-VE8DIvtR-DC4U0acnqW0fh0taKshz/exec?callback=handleResponse&token=${encodeURIComponent(token)}&action=${action}`;
+        document.body.appendChild(script);
+    }
+
+    function handleResponse(data) {
+        console.log('Response from Apps Script:', data);
+        document.getElementById('message').textContent = data.message;
+    }
+
+    function updateUIAfterSignIn(token) {
+        const payload = JSON.parse(atob(token.split('.')[1]));
+        document.getElementById('user-info').textContent = payload.name;
+        document.getElementById('user-info').style.display = 'block';
+        document.getElementById('login-button').style.display = 'none';
+        document.getElementById('logout-button').style.display = 'inline-block';
+    }
+
+    function handleSignIn() {
+        document.querySelector('.g_id_signin div[role=button]').click();
+    }
+
+    function handleSignOut() {
+        google.accounts.id.disableAutoSelect();
+        sendTokenToAppsScript('', 'logout');
+        document.getElementById('user-info').style.display = 'none';
+        document.getElementById('login-button').style.display = 'inline-block';
+        document.getElementById('logout-button').style.display = 'none';
+        document.getElementById('message').textContent = '';
+    }
+    </script>
+</body>
+</html>
