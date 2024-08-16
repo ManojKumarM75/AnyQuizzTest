@@ -20,13 +20,19 @@
             margin-right: 10px;
             display: none;
         }
-        #logout-button {
-            display: none;
+        #login-button, #logout-button {
             background-color: #4285F4;
             color: white;
             border: none;
             padding: 10px 20px;
             cursor: pointer;
+        }
+        #logout-button {
+            display: none;
+        }
+        #message {
+            margin-top: 20px;
+            text-align: center;
         }
     </style>
 </head>
@@ -38,43 +44,49 @@
              data-callback="handleCredentialResponse"
              data-auto_select="false">
         </div>
-        <div class="g_id_signin" data-type="standard"></div>
+        <div class="g_id_signin" data-type="standard" style="display: none;"></div>
+        <button id="login-button" onclick="handleSignIn()">Sign In</button>
         <button id="logout-button" onclick="handleSignOut()">Sign Out</button>
     </div>
+    <div id="message"></div>
 
     <script>
-    let auth2;
-
     function handleCredentialResponse(response) {
         console.log("Encoded JWT ID token: " + response.credential);
-        sendTokenToAppsScript(response.credential);
+        sendTokenToAppsScript(response.credential, 'login');
         updateUIAfterSignIn(response.credential);
     }
 
-    function sendTokenToAppsScript(token) {
+    function sendTokenToAppsScript(token, action) {
         var script = document.createElement('script');
-        script.src = 'https://script.google.com/macros/s/AKfycbz_40oOLkw6zI-CU-1YjwvT-MxPaBdsiCsomBQEK4cDVlxYcFXxJFN57fbozjSWoWa4/exec?callback=handleResponse&token=' + encodeURIComponent(token);
+        script.src = `https://script.google.com/macros/s/AKfycbz_40oOLkw6zI-CU-1YjwvT-MxPaBdsiCsomBQEK4cDVlxYcFXxJFN57fbozjSWoWa4/exec?callback=handleResponse&token=${encodeURIComponent(token)}&action=${action}`;
         document.body.appendChild(script);
     }
 
     function handleResponse(data) {
         console.log('Response from Apps Script:', data);
-        // Handle the response data here
+        document.getElementById('message').textContent = data.message;
     }
 
     function updateUIAfterSignIn(token) {
         const payload = JSON.parse(atob(token.split('.')[1]));
         document.getElementById('user-info').textContent = payload.name;
         document.getElementById('user-info').style.display = 'block';
-        document.querySelector('.g_id_signin').style.display = 'none';
+        document.getElementById('login-button').style.display = 'none';
         document.getElementById('logout-button').style.display = 'inline-block';
+    }
+
+    function handleSignIn() {
+        document.querySelector('.g_id_signin div[role=button]').click();
     }
 
     function handleSignOut() {
         google.accounts.id.disableAutoSelect();
+        sendTokenToAppsScript('', 'logout');
         document.getElementById('user-info').style.display = 'none';
-        document.querySelector('.g_id_signin').style.display = 'block';
+        document.getElementById('login-button').style.display = 'inline-block';
         document.getElementById('logout-button').style.display = 'none';
+        document.getElementById('message').textContent = '';
     }
     </script>
 </body>
