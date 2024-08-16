@@ -59,7 +59,7 @@
 
     function sendTokenToAppsScript(token, action) {
         var script = document.createElement('script');
-        script.src = `https://script.google.com/macros/s/AKfycbz_40oOLkw6zI-CU-1YjwvT-MxPaBdsiCsomBQEK4cDVlxYcFXxJFN57fbozjSWoWa4/exec?callback=handleResponse&token=${encodeURIComponent(token)}&action=${action}`;
+        script.src = `https://script.google.com/macros/s/AKfycbyvTJAQE71K__SiZqaYMaocJL433rH9JcbEohgpXZ9a76nK61WbalvccVr4NwJixfy4/exec?callback=handleResponse&token=${encodeURIComponent(token)}&action=${action}`;
         document.body.appendChild(script);
     }
 
