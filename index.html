@@ -4,36 +4,7 @@
     <title>Google Sign-In Example</title>
     <script src="https://accounts.google.com/gsi/client" async defer></script>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-        #header {
-            display: flex;
-            justify-content: flex-end;
-            align-items: center;
-            padding: 10px 20px;
-            background-color: #f0f0f0;
-        }
-        #user-info {
-            margin-right: 10px;
-            display: none;
-        }
-        #login-button, #logout-button {
-            background-color: #4285F4;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            cursor: pointer;
-        }
-        #logout-button {
-            display: none;
-        }
-        #message {
-            margin-top: 20px;
-            text-align: center;
-        }
+        /* ... (keep the existing styles) ... */
     </style>
 </head>
 <body>
@@ -48,9 +19,15 @@
     let tokenClient;
 
     function handleCredentialResponse(response) {
-        console.log("Encoded JWT ID token: " + response.credential);
-        sendTokenToAppsScript(response.credential, 'login');
-        updateUIAfterSignIn(response.credential);
+        console.log("Credential Response:", response);
+        if (response.credential) {
+            console.log("Encoded JWT ID token: " + response.credential);
+            sendTokenToAppsScript(response.credential, 'login');
+            updateUIAfterSignIn(response.credential);
+        } else {
+            console.error("No credential received in the response");
+            document.getElementById('message').textContent = "Error: No credential received";
+        }
     }
 
     function sendTokenToAppsScript(token, action) {
@@ -61,23 +38,36 @@
 
     function handleResponse(data) {
         console.log('Response from Apps Script:', data);
-        document.getElementById('message').textContent = data.message;
+        if (data.error) {
+            document.getElementById('message').textContent = "Error: " + data.error;
+        } else {
+            document.getElementById('message').textContent = data.message;
+        }
     }
 
     function updateUIAfterSignIn(token) {
-        const payload = JSON.parse(atob(token.split('.')[1]));
-        document.getElementById('user-info').textContent = payload.name;
-        document.getElementById('user-info').style.display = 'block';
-        document.getElementById('login-button').style.display = 'none';
-        document.getElementById('logout-button').style.display = 'inline-block';
+        try {
+            const payload = JSON.parse(atob(token.split('.')[1]));
+            document.getElementById('user-info').textContent = payload.name;
+            document.getElementById('user-info').style.display = 'block';
+            document.getElementById('login-button').style.display = 'none';
+            document.getElementById('logout-button').style.display = 'inline-block';
+        } catch (error) {
+            console.error("Error parsing token:", error);
+            document.getElementById('message').textContent = "Error parsing user info";
+        }
     }
 
     function handleSignIn() {
-        tokenClient.requestAccessToken();
+        tokenClient.requestAccessToken({prompt: 'consent'});
     }
 
     function handleSignOut() {
         google.accounts.id.disableAutoSelect();
+        google.accounts.oauth2.revoke(localStorage.getItem('access_token'), () => {
+            console.log('Token revoked');
+            localStorage.removeItem('access_token');
+        });
         sendTokenToAppsScript('', 'logout');
         document.getElementById('user-info').style.display = 'none';
         document.getElementById('login-button').style.display = 'inline-block';
@@ -94,8 +84,25 @@
 
         tokenClient = google.accounts.oauth2.initTokenClient({
             client_id: '44063799736-jl9n0up9qa94t8imacu9r0g4djf81ej1.apps.googleusercontent.com',
-            callback: handleCredentialResponse,
             scope: 'email profile',
+            callback: (tokenResponse) => {
+                if (tokenResponse && tokenResponse.access_token) {
+                    localStorage.setItem('access_token', tokenResponse.access_token);
+                    fetch(`https://www.googleapis.com/oauth2/v3/userinfo?access_token=${tokenResponse.access_token}`)
+                        .then(response => response.json())
+                        .then(data => {
+                            console.log("User Info:", data);
+                            handleCredentialResponse({credential: tokenResponse.access_token});
+                        })
+                        .catch(error => {
+                            console.error("Error fetching user info:", error);
+                            document.getElementById('message').textContent = "Error fetching user info";
+                        });
+                } else {
+                    console.error("No access token received");
+                    document.getElementById('message').textContent = "Error: No access token received";
+                }
+            }
         });
     };
     </script>
