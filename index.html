@@ -3,36 +3,52 @@
 <head>
     <title>Google Sign-In Example</title>
     <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        #header {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #f0f0f0;
+        }
+        #user-info {
+            margin-right: 10px;
+            display: none;
+        }
+        #logout-button {
+            display: none;
+            background-color: #4285F4;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
-    <div id="g_id_onload"
-         data-client_id="44063799736-jl9n0up9qa94t8imacu9r0g4djf81ej1.apps.googleusercontent.com"
-         data-callback="handleCredentialResponse">
+    <div id="header">
+        <div id="user-info"></div>
+        <div id="g_id_onload"
+             data-client_id="44063799736-jl9n0up9qa94t8imacu9r0g4djf81ej1.apps.googleusercontent.com"
+             data-callback="handleCredentialResponse"
+             data-auto_select="false">
+        </div>
+        <div class="g_id_signin" data-type="standard"></div>
+        <button id="logout-button" onclick="handleSignOut()">Sign Out</button>
     </div>
-    <div id="userInfo"></div>
-    <div class="g_id_signin" data-type="standard"></div>
 
     <script>
+    let auth2;
+
     function handleCredentialResponse(response) {
         console.log("Encoded JWT ID token: " + response.credential);
-        
-        // Decode the JWT token
-        const payload = JSON.parse(atob(response.credential.split('.')[1]));
-        
-        // Display user info
-        displayUserInfo(payload);
-        
         sendTokenToAppsScript(response.credential);
-    }
-
-    function displayUserInfo(payload) {
-        const userInfoDiv = document.getElementById('userInfo');
-        userInfoDiv.innerHTML = `
-            <h2>User Information</h2>
-            <p>Name: ${payload.name}</p>
-            <p>Email: ${payload.email}</p>
-            <img src="${payload.picture}" alt="Profile Picture">
-        `;
+        updateUIAfterSignIn(response.credential);
     }
 
     function sendTokenToAppsScript(token) {
@@ -45,7 +61,21 @@
         console.log('Response from Apps Script:', data);
         // Handle the response data here
     }
+
+    function updateUIAfterSignIn(token) {
+        const payload = JSON.parse(atob(token.split('.')[1]));
+        document.getElementById('user-info').textContent = payload.name;
+        document.getElementById('user-info').style.display = 'block';
+        document.querySelector('.g_id_signin').style.display = 'none';
+        document.getElementById('logout-button').style.display = 'inline-block';
+    }
+
+    function handleSignOut() {
+        google.accounts.id.disableAutoSelect();
+        document.getElementById('user-info').style.display = 'none';
+        document.querySelector('.g_id_signin').style.display = 'block';
+        document.getElementById('logout-button').style.display = 'none';
+    }
     </script>
 </body>
 </html>
-
