@@ -28,7 +28,7 @@ function handleResponse(data) {
         updateUIAfterSignIn(data.username);
     } else if (data.action === 'logout') {
         // Update the message to show "Logged Out"
-        document.getElementById('message').textContent = 'Logged Out';
+        document.getElementById('message').textContent = data.message;
         
         // Reset the UI to the signed-out state
         document.getElementById('user-info').style.display = 'none';
@@ -36,6 +36,7 @@ function handleResponse(data) {
         document.getElementById('logout-button').style.display = 'none';
     }
 }
+
 
 // Function to update the UI after sign-in attempt
 function updateUIAfterSignIn(message) {
