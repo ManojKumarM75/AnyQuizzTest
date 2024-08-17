@@ -1,72 +1,70 @@
-// login.js
-
 // Function to handle the response from Google Sign-In
 function handleCredentialResponse(response) {
-    // Log the encoded JWT ID token
     console.log("Encoded JWT ID token: " + response.credential);
+    
+    // Update UI to show "Logging in" message
+    updateUIMessage("Logging in...");
     
     // Send the token to Apps Script for server-side validation
     sendTokenToAppsScript(response.credential, 'login');
-    
-    // Update the UI to reflect the signed-in state
-    updateUIAfterSignIn(response.credential);
 }
 
 // Function to send the token to Google Apps Script
 function sendTokenToAppsScript(token, action) {
-    // Create a new script element
     var script = document.createElement('script');
-    
-    // Set the src of the script to call the Apps Script web app
-    // Include the token and action as URL parameters
-    script.src = `https://script.google.com/macros/s/AKfycbz5LKXzUYGqnBWthl9VdVyZEmwZ5mugenRFOV-VE8DIvtR-DC4U0acnqW0fh0taKshz/exec?callback=handleResponse&token=${encodeURIComponent(token)}&action=${action}`;
-    
-    // Append the script to the body to execute it
+    script.src = `https://script.google.com/macros/s/AKfycbyNWApSCRW-EFJ7SNyU3_YzM4obGzRJkbzkvpG-pItc0oPvl8GEzEpm9SIcIErcI1dM/exec?callback=handleResponse&token=${encodeURIComponent(token)}&action=${action}`;
     document.body.appendChild(script);
 }
 
 // Callback function to handle the response from Apps Script
 function handleResponse(data) {
-    // Log the response from Apps Script
     console.log('Response from Apps Script:', data);
     
-    // Update the message div with the response message
-    document.getElementById('message').textContent = data.message;
+    if (data.action === 'login') {
+        if (data.error) {
+            // Handle login error
+            updateUIMessage('Login failed: ' + data.error);
+            resetUI();
+        } else {
+            // Update the user info with the confirmed username from Apps Script
+            updateUIMessage(data.username);
+            document.getElementById('logout-button').style.display = 'inline-block';
+        }
+    } else if (data.action === 'logout') {
+        // Update the message to show "Logged Out"
+        updateUIMessage(data.message);
+        resetUI();
+    }
 }
 
-// Function to update the UI after successful sign-in
-function updateUIAfterSignIn(token) {
-    // Decode the JWT token to get user information
-    const payload = JSON.parse(atob(token.split('.')[1]));
-    
-    // Update the user info display
-    document.getElementById('user-info').textContent = payload.name;
+// Function to update the UI message
+function updateUIMessage(message) {
+    document.getElementById('user-info').textContent = message;
     document.getElementById('user-info').style.display = 'block';
-    
-    // Hide the login button and show the logout button
     document.getElementById('login-button').style.display = 'none';
-    document.getElementById('logout-button').style.display = 'inline-block';
+}
+
+// Function to reset the UI to the initial state
+function resetUI() {
+    document.getElementById('user-info').style.display = 'none';
+    document.getElementById('login-button').style.display = 'inline-block';
+    document.getElementById('logout-button').style.display = 'none';
 }
 
 // Function to handle the sign-in button click
 function handleSignIn() {
-    // Programmatically click the hidden Google Sign-In button
     document.querySelector('.g_id_signin div[role=button]').click();
 }
 
 // Function to handle the sign-out process
 function handleSignOut() {
-    // Disable auto-select for Google Sign-In
     google.accounts.id.disableAutoSelect();
+    
+    // Show "Logging Out..." message
+    updateUIMessage('Logging Out...');
     
     // Send a logout request to Apps Script
     sendTokenToAppsScript('', 'logout');
-    
-    // Reset the UI to the signed-out state
-    document.getElementById('user-info').style.display = 'none';
-    document.getElementById('login-button').style.display = 'inline-block';
-    document.getElementById('logout-button').style.display = 'none';
-    document.getElementById('message').textContent = '';
 }
 
 // Initialize Google Sign-In when the page loads
