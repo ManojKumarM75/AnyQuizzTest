@@ -18,30 +18,20 @@
         }
         #user-info {
             margin-right: 10px;
-            display: none;
         }
-        #login-button, #logout-button {
+        #login-button {
             background-color: #4285F4;
             color: white;
             border: none;
             padding: 10px 20px;
             cursor: pointer;
         }
-        #logout-button {
-            display: none;
-        }
-        #message {
-            margin-top: 20px;
-            text-align: center;
-        }
     </style>
     <script src="login.js"></script>
-
 </head>
 <body>
     <div id="header">
         <div id="user-info"></div>
-        <!--- This creates the header with user info, hidden Google Sign-In button, and custom login/logout buttons. --->
         <div id="g_id_onload"
              data-client_id="44063799736-jl9n0up9qa94t8imacu9r0g4djf81ej1.apps.googleusercontent.com"
              data-callback="handleCredentialResponse"
@@ -49,9 +39,6 @@
         </div>
         <div class="g_id_signin" data-type="standard" style="display: none;"></div>
         <button id="login-button" onclick="handleSignIn()">Sign In</button>
-        <button id="logout-button" onclick="handleSignOut()">Sign Out</button>
     </div>
-   
-
 </body>
 </html>
