@@ -15,7 +15,7 @@ function handleCredentialResponse(response) {
 // Function to send the token to Google Apps Script
 function sendTokenToAppsScript(token, action) {
     var script = document.createElement('script');
-    script.src = `https://script.google.com/macros/s/AKfycbzTh8e0tcyRVAEHj_g3bghsehc2E1q1X0Oa8JzKf48t-dAoBjO6p8vo5p_7kwkIJmhg/exec?callback=handleResponse&token=${encodeURIComponent(token)}&action=${action}`;
+    script.src = `https://script.google.com/macros/s/AKfycbyNWApSCRW-EFJ7SNyU3_YzM4obGzRJkbzkvpG-pItc0oPvl8GEzEpm9SIcIErcI1dM/exec?callback=handleResponse&token=${encodeURIComponent(token)}&action=${action}`;
     document.body.appendChild(script);
 }
 
@@ -24,18 +24,28 @@ function handleResponse(data) {
     console.log('Response from Apps Script:', data);
     
     if (data.action === 'login') {
-        // Update the user info with the confirmed username from Apps Script
-        updateUIAfterSignIn(data.username);
+        if (data.error) {
+            // Handle login error
+            document.getElementById('message').textContent = 'Login failed: ' + data.error;
+            resetUI();
+        } else {
+            // Update the user info with the confirmed username from Apps Script
+            document.getElementById('user-info').textContent = data.username;
+            document.getElementById('message').textContent = '';
+        }
     } else if (data.action === 'logout') {
         // Update the message to show "Logged Out"
         document.getElementById('message').textContent = data.message;
-        
-        // Reset the UI to the signed-out state
-        document.getElementById('user-info').style.display = 'none';
-        document.getElementById('login-button').style.display = 'inline-block';
-        document.getElementById('logout-button').style.display = 'none';
+        resetUI();
     }
 }
+
+function resetUI() {
+    document.getElementById('user-info').style.display = 'none';
+    document.getElementById('login-button').style.display = 'inline-block';
+    document.getElementById('logout-button').style.display = 'none';
+}
+
 
 
 // Function to update the UI after sign-in attempt
