@@ -6,7 +6,8 @@ function handleCredentialResponse(response) {
 
 function sendTokenToAppsScript(token, action) {
     var script = document.createElement('script');
-    script.src = `https://script.google.com/macros/s/AKfycbyNWApSCRW-EFJ7SNyU3_YzM4obGzRJkbzkvpG-pItc0oPvl8GEzEpm9SIcIErcI1dM/exec?callback=handleResponse&token=${encodeURIComponent(token)}&action=${action}`;
+    //script.src = `https://script.google.com/macros/s/AKfycbyNWApSCRW-EFJ7SNyU3_YzM4obGzRJkbzkvpG-pItc0oPvl8GEzEpm9SIcIErcI1dM/exec?callback=handleResponse&token=${encodeURIComponent(token)}&action=${action}`;
+    script.src = `https://script.google.com/macros/s/AKfycby3SDWzfGtP-pcqHCqlZbnHwsLCQjKjdgymPI6lMA1OJAQFltQpdRPQYfJkHDIYMCxo/exec?callback=handleResponse&token=${encodeURIComponent(token)}&action=${action}`;
     document.body.appendChild(script);
 }
 
