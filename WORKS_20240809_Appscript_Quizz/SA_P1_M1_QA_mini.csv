@@ -1,0 +1,501 @@
+Type,Question,Options,Answer,Chunk_ID,QA_ID
+Blanks,Data Science extracts knowledge and insights from _________ data.,,raw,SA_P1_M1_Ch01_Pg004_1,SA_P1_M1_Q001
+Match,Data Science,Analyzes images and extracts features;Extracts knowledge and insights from data;Builds and trains models for machine learning,Extracts knowledge and insights from data,SA_P1_M1_Ch01_Pg004_1,SA_P1_M1_Q002
+Match,Machine Learning Engineer,Builds and trains models for machine learning;Extracts knowledge and insights from data;Analyzes images and extracts features,Builds and trains models for machine learning,SA_P1_M1_Ch01_Pg004_1,SA_P1_M1_Q003
+Match,Image Recognition,Extracts knowledge and insights from data;Analyzes images and extracts features;Builds and trains models for machine learning,Analyzes images and extracts features,SA_P1_M1_Ch01_Pg004_1,SA_P1_M1_Q004
+MCQ,Which of the following industries does NOT benefit from Data Science applications?,Finance;Education;Healthcare;Manufacturing,['Manufacturing'],SA_P1_M1_Ch01_Pg004_1,SA_P1_M1_Q005
+True/False,Data Science involves extracting insights from structured data only.,True;False,FALSE,SA_P1_M1_Ch01_Pg004_1,SA_P1_M1_Q006
+Blanks,The beginner level salary for a Data Scientist ranges from ______ to ______.,,"['5 lpa', '8 lpa']",SA_P1_M1_Ch01_Pg008_1,SA_P1_M1_Q007
+Blanks,The intermediate level salary for a Data Scientist ranges from ______ to ______.,,"['8 lpa', '16 lpa']",SA_P1_M1_Ch01_Pg008_1,SA_P1_M1_Q008
+Blanks,The expert level salary for a Data Scientist ranges from ______ to ______.,,"['16 lpa', '24+ lpa']",SA_P1_M1_Ch01_Pg008_1,SA_P1_M1_Q009
+Match,Probability and Statistics,Methods for presenting data in a visual format.;Advanced algorithms used to solve complex machine learning problems.;Programming languages commonly used in data science.;Techniques used to understand the relationships between data points.;Techniques used to process and analyze image data.;Algorithms used to make predictions or identify patterns in data.;Techniques used to process and analyze natural language data.,Techniques used to understand the relationships between data points.,SA_P1_M1_Ch01_Pg008_1,SA_P1_M1_Q010
+Match,Python / R Programming,Algorithms used to make predictions or identify patterns in data.;Methods for presenting data in a visual format.;Techniques used to understand the relationships between data points.;Techniques used to process and analyze natural language data.;Advanced algorithms used to solve complex machine learning problems.;Programming languages commonly used in data science.;Techniques used to process and analyze image data.,Programming languages commonly used in data science.,SA_P1_M1_Ch01_Pg008_1,SA_P1_M1_Q011
+Match,Data Visualization Techniques,Methods for presenting data in a visual format.;Algorithms used to make predictions or identify patterns in data.;Advanced algorithms used to solve complex machine learning problems.;Techniques used to process and analyze natural language data.;Techniques used to understand the relationships between data points.;Techniques used to process and analyze image data.;Programming languages commonly used in data science.,Methods for presenting data in a visual format.,SA_P1_M1_Ch01_Pg008_1,SA_P1_M1_Q012
+Match,Machine Learning,Advanced algorithms used to solve complex machine learning problems.;Techniques used to process and analyze natural language data.;Techniques used to process and analyze image data.;Methods for presenting data in a visual format.;Programming languages commonly used in data science.;Algorithms used to make predictions or identify patterns in data.;Techniques used to understand the relationships between data points.,Algorithms used to make predictions or identify patterns in data.,SA_P1_M1_Ch01_Pg008_1,SA_P1_M1_Q013
+Match,Deep Learning,Programming languages commonly used in data science.;Techniques used to understand the relationships between data points.;Algorithms used to make predictions or identify patterns in data.;Advanced algorithms used to solve complex machine learning problems.;Techniques used to process and analyze natural language data.;Techniques used to process and analyze image data.;Methods for presenting data in a visual format.,Advanced algorithms used to solve complex machine learning problems.,SA_P1_M1_Ch01_Pg008_1,SA_P1_M1_Q014
+Match,NLP,Methods for presenting data in a visual format.;Algorithms used to make predictions or identify patterns in data.;Advanced algorithms used to solve complex machine learning problems.;Techniques used to process and analyze image data.;Techniques used to process and analyze natural language data.;Programming languages commonly used in data science.;Techniques used to understand the relationships between data points.,Techniques used to process and analyze natural language data.,SA_P1_M1_Ch01_Pg008_1,SA_P1_M1_Q015
+Match,Computer Vision,Algorithms used to make predictions or identify patterns in data.;Techniques used to process and analyze natural language data.;Techniques used to process and analyze image data.;Programming languages commonly used in data science.;Advanced algorithms used to solve complex machine learning problems.;Techniques used to understand the relationships between data points.;Methods for presenting data in a visual format.,Techniques used to process and analyze image data.,SA_P1_M1_Ch01_Pg008_1,SA_P1_M1_Q016
+MCQ,Which of the following is a skill required for a Data Scientist?,Probability and Statistics;Database Management;Web Development;All of the above,['All of the above'],SA_P1_M1_Ch01_Pg008_1,SA_P1_M1_Q017
+MCQ,What is the salary range for an intermediate level Data Scientist?,8 lpa to 16 lpa;None of the above;5 lpa to 8 lpa;16 lpa to 24+ lpa,['8 lpa to 16 lpa'],SA_P1_M1_Ch01_Pg008_1,SA_P1_M1_Q018
+True/False,The beginner level salary for a Data Scientist is higher than the intermediate level salary.,True;False,FALSE,SA_P1_M1_Ch01_Pg008_1,SA_P1_M1_Q019
+True/False,Data visualization techniques are used to analyze data.,True;False,TRUE,SA_P1_M1_Ch01_Pg008_1,SA_P1_M1_Q020
+Blanks,Python was created by _______________ and released in _______________.,,"['Guido van Rossum', '1991']",SA_P1_M1_Ch01_Pg010_1,SA_P1_M1_Q021
+Match,Free and Open Source,Python code is executed line by line.;Python can be used without paying any fees.;Python is beginner-friendly and has a simple syntax.,Python can be used without paying any fees.,SA_P1_M1_Ch01_Pg010_1,SA_P1_M1_Q022
+Match,Easy to Learn,Python is beginner-friendly and has a simple syntax.;Python can be used without paying any fees.;Python code is executed line by line.,Python is beginner-friendly and has a simple syntax.,SA_P1_M1_Ch01_Pg010_1,SA_P1_M1_Q023
+Match,Interpreted Language,Python can be used without paying any fees.;Python is beginner-friendly and has a simple syntax.;Python code is executed line by line.,Python code is executed line by line.,SA_P1_M1_Ch01_Pg010_1,SA_P1_M1_Q024
+Blanks,"Python is a programming language that runs on many different operating systems, including ______.",,"Linux, Windows, and Mac OS X",SA_P1_M1_Ch01_Pg012_1,SA_P1_M1_Q025
+Blanks,"To get the most up-to-date information about Python, visit the ______.",,official website of Python,SA_P1_M1_Ch01_Pg012_1,SA_P1_M1_Q026
+Blanks,The three main versions of Python are ______.,,"Python 1.x, Python 2.x, and Python 3.x",SA_P1_M1_Ch01_Pg012_1,SA_P1_M1_Q027
+Match,Python,A programming language that runs on various operating systems;Major versions of Python;Where to find the latest Python information,A programming language that runs on various operating systems,SA_P1_M1_Ch01_Pg012_1,SA_P1_M1_Q028
+Match,Python official website,Major versions of Python;A programming language that runs on various operating systems;Where to find the latest Python information,Where to find the latest Python information,SA_P1_M1_Ch01_Pg012_1,SA_P1_M1_Q029
+Match,Python versions,A programming language that runs on various operating systems;Major versions of Python;Where to find the latest Python information,Major versions of Python,SA_P1_M1_Ch01_Pg012_1,SA_P1_M1_Q030
+MCQ,Which of the following is NOT an operating system that Python runs on?,Linux;iOS;Windows;Mac OS X,iOS,SA_P1_M1_Ch01_Pg012_1,SA_P1_M1_Q031
+MCQ,What is the purpose of the Python official website?,To provide the most up-to-date Python information;To store Python documentation;To download Python software;To teach Python programming,To provide the most up-to-date Python information,SA_P1_M1_Ch01_Pg012_1,SA_P1_M1_Q032
+MCQ,"Which Python version is the most recent, according to the passage?",Python 2.x;Python 4.x;Python 1.x;Python 3.x,Python 3.x,SA_P1_M1_Ch01_Pg012_1,SA_P1_M1_Q033
+True/False,Python can only be run on Unix-based operating systems.,True;False,FALSE,SA_P1_M1_Ch01_Pg012_1,SA_P1_M1_Q034
+True/False,The official Python website is the only place to find Python information.,True;False,FALSE,SA_P1_M1_Ch01_Pg012_1,SA_P1_M1_Q035
+True/False,Python 2.x is the most recent version of Python.,True;False,FALSE,SA_P1_M1_Ch01_Pg012_1,SA_P1_M1_Q036
+Blanks,"In Step 2, we need to check the box ___.",,Add Python 3.10.8 to PATH,SA_P1_M1_Ch01_Pg014_1,SA_P1_M1_Q037
+Blanks,"In Step 4, after the installation, python is ___.",,successfully installed,SA_P1_M1_Ch01_Pg014_1,SA_P1_M1_Q038
+Blanks,"To check if python is installed on a Windows PC, we can run ___ on the Command Line.",,C:\\Users\\Your Name>python –version,SA_P1_M1_Ch01_Pg014_1,SA_P1_M1_Q039
+Match,Add Python 3.10.8 to PATH,Checkbox to add Python to the system path;Used to execute Python commands;Click to install Python,Checkbox to add Python to the system path,SA_P1_M1_Ch01_Pg014_1,SA_P1_M1_Q040
+Match,Python interactive shell,Used to execute Python commands;Click to install Python;Checkbox to add Python to the system path,Used to execute Python commands,SA_P1_M1_Ch01_Pg014_1,SA_P1_M1_Q041
+Match,Install Now,Checkbox to add Python to the system path;Used to execute Python commands;Click to install Python,Click to install Python,SA_P1_M1_Ch01_Pg014_1,SA_P1_M1_Q042
+MCQ,Which of the following is NOT a step in installing Python on a Windows PC?,Creating a new folder for Python installation;Clicking on 'Install Now';Running 'C:\\Users\\Your Name>python –version' on the Command Line;Checking the 'Add Python 3.10.8 to PATH' box,Creating a new folder for Python installation,SA_P1_M1_Ch01_Pg014_1,SA_P1_M1_Q043
+MCQ,What does 'REPL' stand for in the context of Python?,Run-Execute-Print-Loop;Read-Execute-Print-Loop;Return-Execute-Print-Loop;Read-Eval-Print-Loop,Read-Eval-Print-Loop,SA_P1_M1_Ch01_Pg014_1,SA_P1_M1_Q044
+True/False,The installation of Python on a Windows PC is complete after Step 2.,True;False,FALSE,SA_P1_M1_Ch01_Pg014_1,SA_P1_M1_Q045
+True/False,The 'python' command can be used to open the Python interactive shell.,True;False,TRUE,SA_P1_M1_Ch01_Pg014_1,SA_P1_M1_Q046
+Blanks,The online platform for running python code in the browser is _____.,,colab,SA_P1_M1_Ch01_Pg017_1,SA_P1_M1_Q047
+Match,Pycharm,Distribution of Python and related packages.;IDE for Python development.;Online platform for running python code in the browser.,IDE for Python development.,SA_P1_M1_Ch01_Pg017_1,SA_P1_M1_Q048
+Match,Anaconda,Online platform for running python code in the browser.;Distribution of Python and related packages.;IDE for Python development.,Distribution of Python and related packages.,SA_P1_M1_Ch01_Pg017_1,SA_P1_M1_Q049
+Match,Jupyter Notebook,Distribution of Python and related packages.;Online platform for running python code in the browser.;IDE for Python development.,Online platform for running python code in the browser.,SA_P1_M1_Ch01_Pg017_1,SA_P1_M1_Q050
+MCQ,Which of the following is NOT an IDE for Python?,Visual Studio Code;Pycharm;Jupyter Notebook;Anaconda,Jupyter Notebook,SA_P1_M1_Ch01_Pg017_1,SA_P1_M1_Q051
+True/False,Pycharm is a free and open-source IDE.,True;False,FALSE,SA_P1_M1_Ch01_Pg017_1,SA_P1_M1_Q052
+Blanks,For printing in Python we can use _______ function.,,print,SA_P1_M1_Ch02_Pg022_1,SA_P1_M1_Q053
+Match,print(),Can be used to enclose strings;Used for printing on the console;Can be used to enclose strings,Used for printing on the console,SA_P1_M1_Ch02_Pg022_1,SA_P1_M1_Q054
+Match,single quote,Can be used to enclose strings;Can be used to enclose strings;Used for printing on the console,Can be used to enclose strings,SA_P1_M1_Ch02_Pg022_1,SA_P1_M1_Q055
+Match,double quote,Can be used to enclose strings;Used for printing on the console;Can be used to enclose strings,Can be used to enclose strings,SA_P1_M1_Ch02_Pg022_1,SA_P1_M1_Q056
+MCQ,Which of the following is the correct syntax for printing a string in Python?,print(string);print string;print('string');print {string},print('string'),SA_P1_M1_Ch02_Pg022_1,SA_P1_M1_Q057
+True/False,print() function can only print single strings.,True;False,FALSE,SA_P1_M1_Ch02_Pg022_1,SA_P1_M1_Q058
+Blanks,Variables are names to the _________ to store and manipulate data or information in a program,,memory location,SA_P1_M1_Ch02_Pg025_1,SA_P1_M1_Q059
+Match,a,integer;float;string,integer,SA_P1_M1_Ch02_Pg025_1,SA_P1_M1_Q060
+Match,b,integer;string;float,float,SA_P1_M1_Ch02_Pg025_1,SA_P1_M1_Q061
+Match,name,string;float;integer,string,SA_P1_M1_Ch02_Pg025_1,SA_P1_M1_Q062
+MCQ,Which of the following is a valid variable name?,1age;_age;age,_age,SA_P1_M1_Ch02_Pg025_1,SA_P1_M1_Q063
+True/False,Variable names are case-sensitive.,True;False,TRUE,SA_P1_M1_Ch02_Pg025_1,SA_P1_M1_Q064
+Blanks,Comments are used to hide the statement from the ________.,,interpreter,SA_P1_M1_Ch02_Pg027_1,SA_P1_M1_Q065
+Blanks,The character used to comment the statement is ________.,,#,SA_P1_M1_Ch02_Pg027_1,SA_P1_M1_Q066
+Blanks,Comments are mainly used to ________.,,describe the code,SA_P1_M1_Ch02_Pg027_1,SA_P1_M1_Q067
+Blanks,The code to perform addition of two numbers is ________.,,#code to perform addition of two numbers,SA_P1_M1_Ch02_Pg027_1,SA_P1_M1_Q068
+Match,Comments,Used to hide statements from the interpreter;Special symbols to perform specific tasks,Used to hide statements from the interpreter,SA_P1_M1_Ch02_Pg027_1,SA_P1_M1_Q069
+Match,Operators,Used to hide statements from the interpreter;Special symbols to perform specific tasks,Special symbols to perform specific tasks,SA_P1_M1_Ch02_Pg027_1,SA_P1_M1_Q070
+MCQ,Which character is used to comment a statement?,%;#;*;$,#,SA_P1_M1_Ch02_Pg027_1,SA_P1_M1_Q071
+MCQ,Which of the following is NOT a type of operator?,Logical Operators;Comparison Operators;Formatting Operators;Arithmetic Operators,Formatting Operators,SA_P1_M1_Ch02_Pg027_1,SA_P1_M1_Q072
+True/False,Comments are only used for single-line statements.,True;False,FALSE,SA_P1_M1_Ch02_Pg027_1,SA_P1_M1_Q073
+True/False,Operators are used to perform specific tasks.,True;False,TRUE,SA_P1_M1_Ch02_Pg027_1,SA_P1_M1_Q074
+Blanks,The operator used to perform division is ________.,,/,SA_P1_M1_Ch02_Pg029_1,SA_P1_M1_Q075
+Blanks,The operator that checks if two values are not equal is ________.,,!=,SA_P1_M1_Ch02_Pg029_1,SA_P1_M1_Q076
+Blanks,The operator that returns the remainder after division is ________.,,%,SA_P1_M1_Ch02_Pg029_1,SA_P1_M1_Q077
+Match,Addition,Performs subtraction;Returns the remainder after division;Divides two numbers and rounds down the result;Performs division;Performs addition;Raises a number to a power;Performs multiplication,Performs addition,SA_P1_M1_Ch02_Pg029_1,SA_P1_M1_Q078
+Match,Subtraction,Performs addition;Performs multiplication;Performs subtraction;Returns the remainder after division;Raises a number to a power;Performs division;Divides two numbers and rounds down the result,Performs subtraction,SA_P1_M1_Ch02_Pg029_1,SA_P1_M1_Q079
+Match,Multiplication,Performs addition;Raises a number to a power;Divides two numbers and rounds down the result;Performs subtraction;Returns the remainder after division;Performs division;Performs multiplication,Performs multiplication,SA_P1_M1_Ch02_Pg029_1,SA_P1_M1_Q080
+Match,Division,Returns the remainder after division;Performs division;Performs addition;Divides two numbers and rounds down the result;Performs subtraction;Raises a number to a power;Performs multiplication,Performs division,SA_P1_M1_Ch02_Pg029_1,SA_P1_M1_Q081
+Match,Modulus,Divides two numbers and rounds down the result;Raises a number to a power;Performs multiplication;Performs division;Performs addition;Returns the remainder after division;Performs subtraction,Returns the remainder after division,SA_P1_M1_Ch02_Pg029_1,SA_P1_M1_Q082
+Match,Exponentiation,Performs multiplication;Raises a number to a power;Performs addition;Returns the remainder after division;Divides two numbers and rounds down the result;Performs subtraction;Performs division,Raises a number to a power,SA_P1_M1_Ch02_Pg029_1,SA_P1_M1_Q083
+Match,Floor division,Returns the remainder after division;Performs subtraction;Performs division;Divides two numbers and rounds down the result;Performs addition;Performs multiplication;Raises a number to a power,Divides two numbers and rounds down the result,SA_P1_M1_Ch02_Pg029_1,SA_P1_M1_Q084
+MCQ,Which operator checks if two values are greater than or equal to each other?,<;>;<=;>=,>=,SA_P1_M1_Ch02_Pg029_1,SA_P1_M1_Q085
+MCQ,Which operator returns the opposite value of a given value?,or;and;not;==,not,SA_P1_M1_Ch02_Pg029_1,SA_P1_M1_Q086
+MCQ,Which operator has lower precedence than the multiplication operator?,/;**;+;-,+,SA_P1_M1_Ch02_Pg029_1,SA_P1_M1_Q087
+True/False,The modulus operator always returns a positive value.,True;False,FALSE,SA_P1_M1_Ch02_Pg029_1,SA_P1_M1_Q088
+True/False,The logical OR operator returns true if either of the values is true.,True;False,TRUE,SA_P1_M1_Ch02_Pg029_1,SA_P1_M1_Q089
+True/False,The floor division operator rounds up the result.,True;False,FALSE,SA_P1_M1_Ch02_Pg029_1,SA_P1_M1_Q090
+Blanks,The assignment operator assigns a value to the variable.,,TRUE,SA_P1_M1_Ch02_Pg032_1,SA_P1_M1_Q091
+Blanks,The operator performs operations and assigns result to the same variable.,,+=,SA_P1_M1_Ch02_Pg032_1,SA_P1_M1_Q092
+Blanks,The operator returns true if two variables refer same memory location.,,is,SA_P1_M1_Ch02_Pg032_1,SA_P1_M1_Q093
+Blanks,The operator returns true if a value in a collection otherwise false.,,in,SA_P1_M1_Ch02_Pg032_1,SA_P1_M1_Q094
+Match,Assignment Operator,Returns true if a value in a collection otherwise false;Returns true if two variables refer same memory location;Assigns a value to the variable,Assigns a value to the variable,SA_P1_M1_Ch02_Pg032_1,SA_P1_M1_Q095
+Match,Identity Operator,Assigns a value to the variable;Returns true if a value in a collection otherwise false;Returns true if two variables refer same memory location,Returns true if two variables refer same memory location,SA_P1_M1_Ch02_Pg032_1,SA_P1_M1_Q096
+Match,Membership Operator,Returns true if a value in a collection otherwise false;Assigns a value to the variable;Returns true if two variables refer same memory location,Returns true if a value in a collection otherwise false,SA_P1_M1_Ch02_Pg032_1,SA_P1_M1_Q097
+MCQ,Which of the following is the assignment operator?,+=;=;is;-=,=,SA_P1_M1_Ch02_Pg032_1,SA_P1_M1_Q098
+MCQ,Which of the following is the identity operator?,not in;is;in;=,is,SA_P1_M1_Ch02_Pg032_1,SA_P1_M1_Q099
+MCQ,Which of the following is the membership operator?,=;is;+=;in,in,SA_P1_M1_Ch02_Pg032_1,SA_P1_M1_Q100
+True/False,The assignment operator can be used to perform operations.,True;False,TRUE,SA_P1_M1_Ch02_Pg032_1,SA_P1_M1_Q101
+True/False,The identity operator returns true if two variables refer different memory locations.,True;False,FALSE,SA_P1_M1_Ch02_Pg032_1,SA_P1_M1_Q102
+True/False,The membership operator can be used to check if a value is not in a collection.,True;False,TRUE,SA_P1_M1_Ch02_Pg032_1,SA_P1_M1_Q103
+Blanks,The input() built-in function allows us to accept input from a _______.,,standard input device (keyboard),SA_P1_M1_Ch02_Pg035_1,SA_P1_M1_Q104
+Blanks,Input from the input() function is always in _______ format.,,string,SA_P1_M1_Ch02_Pg035_1,SA_P1_M1_Q105
+Match,int(),Converts string or int to float;Converts numeric value to string;Converts string or float to integer,Converts string or float to integer,SA_P1_M1_Ch02_Pg035_1,SA_P1_M1_Q106
+Match,float(),Converts string or int to float;Converts string or float to integer;Converts numeric value to string,Converts string or int to float,SA_P1_M1_Ch02_Pg035_1,SA_P1_M1_Q107
+Match,str(),Converts string or int to float;Converts numeric value to string;Converts string or float to integer,Converts numeric value to string,SA_P1_M1_Ch02_Pg035_1,SA_P1_M1_Q108
+MCQ,Which of the following is NOT a type casting function in Python?,string();int();float(),string(),SA_P1_M1_Ch02_Pg035_1,SA_P1_M1_Q109
+MCQ,"What is the output of the following code?
+a = input('Enter a value: ')
+print(type(a))",<class 'float'>;<class 'int'>;<class 'str'>,"[""<class 'str'>""]",SA_P1_M1_Ch02_Pg035_1,SA_P1_M1_Q110
+True/False,The input() function requires the user to press Enter after entering input.,True;False,TRUE,SA_P1_M1_Ch02_Pg035_1,SA_P1_M1_Q111
+True/False,Type casting functions can convert any data type to any other data type.,True;False,FALSE,SA_P1_M1_Ch02_Pg035_1,SA_P1_M1_Q112
+Blanks,Data type represents the type of value ______ in a variable.,,stored,SA_P1_M1_Ch03_Pg038_1,SA_P1_M1_Q113
+Blanks,The type() function is used to find the ______ of a variable.,,type,SA_P1_M1_Ch03_Pg038_1,SA_P1_M1_Q114
+Blanks,_____ hold only numeric values.,,Numeric data types,SA_P1_M1_Ch03_Pg038_1,SA_P1_M1_Q115
+Blanks,_____ is an integer type variable.,,x = 40,SA_P1_M1_Ch03_Pg038_1,SA_P1_M1_Q116
+Blanks,The ______ character must be used for complex type declaration.,,'j',SA_P1_M1_Ch03_Pg038_1,SA_P1_M1_Q117
+Match,Data Type,Stores complex numbers;Stores whole numbers;Holds only numeric values;Stores decimal values;Type of value stored in a variable,Type of value stored in a variable,SA_P1_M1_Ch03_Pg038_1,SA_P1_M1_Q118
+Match,Integer Type,Holds only numeric values;Stores whole numbers;Type of value stored in a variable;Stores decimal values;Stores complex numbers,Stores whole numbers,SA_P1_M1_Ch03_Pg038_1,SA_P1_M1_Q119
+Match,Float Type,Type of value stored in a variable;Holds only numeric values;Stores complex numbers;Stores whole numbers;Stores decimal values,Stores decimal values,SA_P1_M1_Ch03_Pg038_1,SA_P1_M1_Q120
+Match,Complex Type,Stores complex numbers;Stores decimal values;Stores whole numbers;Holds only numeric values;Type of value stored in a variable,Stores complex numbers,SA_P1_M1_Ch03_Pg038_1,SA_P1_M1_Q121
+Match,Numeric Data Types,Type of value stored in a variable;Stores decimal values;Holds only numeric values;Stores complex numbers;Stores whole numbers,Holds only numeric values,SA_P1_M1_Ch03_Pg038_1,SA_P1_M1_Q122
+MCQ,Which of the following is NOT a numeric data type?,Integer;Complex;Float;String,String,SA_P1_M1_Ch03_Pg038_1,SA_P1_M1_Q123
+MCQ,What is the data type of the variable 'x' in the example 'x = 20'?,Integer;Boolean;Float;Complex,Integer,SA_P1_M1_Ch03_Pg038_1,SA_P1_M1_Q124
+MCQ,Which of the following is the correct way to declare a complex number in Python?,z = 10+20i;z = 10 - 20j;z = 10 - 20i;z = 10+20j,z = 10+20j,SA_P1_M1_Ch03_Pg038_1,SA_P1_M1_Q125
+True/False,All numeric data types can hold decimal values.,True;False,FALSE,SA_P1_M1_Ch03_Pg038_1,SA_P1_M1_Q126
+True/False,The type() function returns the value stored in a variable.,True;False,FALSE,SA_P1_M1_Ch03_Pg038_1,SA_P1_M1_Q127
+True/False,Complex data types are used to store complex numbers.,True;False,TRUE,SA_P1_M1_Ch03_Pg038_1,SA_P1_M1_Q128
+Blanks,"Boolean data types represent logical values, where True denotes ______ and False denotes ______.",,"['truth', 'falsehood']",SA_P1_M1_Ch03_Pg041_1,SA_P1_M1_Q129
+Blanks,Strings are ______ enclosed between ______ or ______.,,"['sequences of characters', 'single quotes', 'double quotes']",SA_P1_M1_Ch03_Pg041_1,SA_P1_M1_Q130
+Match,Boolean Type,A logical value representing truth or falsehood;A sequence of characters,A logical value representing truth or falsehood,SA_P1_M1_Ch03_Pg041_1,SA_P1_M1_Q131
+Match,String Type,A sequence of characters;A logical value representing truth or falsehood,A sequence of characters,SA_P1_M1_Ch03_Pg041_1,SA_P1_M1_Q132
+MCQ,Which of the following is a valid Boolean expression?,"is_female == False;both of the above;is_male = ""True"";none of the above",both of the above,SA_P1_M1_Ch03_Pg041_1,SA_P1_M1_Q133
+True/False,Strings cannot be empty in Python.,True;False,FALSE,SA_P1_M1_Ch03_Pg041_1,SA_P1_M1_Q134
+True/False,"The len() function returns the number of characters in a string, including spaces.",True;False,TRUE,SA_P1_M1_Ch03_Pg041_1,SA_P1_M1_Q135
+Blanks,"Strings are immutable, which means that the characters in a string cannot be _____________",,changed,SA_P1_M1_Ch03_Pg044_1,SA_P1_M1_Q136
+Blanks,The index of the first character in a string is _____________,,0,SA_P1_M1_Ch03_Pg044_1,SA_P1_M1_Q137
+Blanks,The index of the last character in a string is _____________,,-1,SA_P1_M1_Ch03_Pg044_1,SA_P1_M1_Q138
+Blanks,The range operator (x1:x2) can be used to access characters from position _____________ to _____________-1,,"['x1', 'x2']",SA_P1_M1_Ch03_Pg044_1,SA_P1_M1_Q139
+Match,Index,Used to access characters from a specified location;Used to access characters from the end of a string;Used to access a range of characters,Used to access characters from a specified location,SA_P1_M1_Ch03_Pg044_1,SA_P1_M1_Q140
+Match,Negative Index,Used to access characters from a specified location;Used to access characters from the end of a string;Used to access a range of characters,Used to access characters from the end of a string,SA_P1_M1_Ch03_Pg044_1,SA_P1_M1_Q141
+Match,Range Operator,Used to access a range of characters;Used to access characters from a specified location;Used to access characters from the end of a string,Used to access a range of characters,SA_P1_M1_Ch03_Pg044_1,SA_P1_M1_Q142
+MCQ,Which of the following is NOT a valid way to access characters in a string?,:;{};[];(),(),SA_P1_M1_Ch03_Pg044_1,SA_P1_M1_Q143
+MCQ,What is the index of the first character in the string 'Python'?,-1;0;1;2,0,SA_P1_M1_Ch03_Pg044_1,SA_P1_M1_Q144
+True/False,Strings can be modified after they are created,True;False,FALSE,SA_P1_M1_Ch03_Pg044_1,SA_P1_M1_Q145
+True/False,Negative indices can be used to access characters from the beginning of a string,True;False,FALSE,SA_P1_M1_Ch03_Pg044_1,SA_P1_M1_Q146
+Blanks,"String data types can be combined using the ______ operator, which concatenates two strings together.",,+,SA_P1_M1_Ch03_Pg047_1,SA_P1_M1_Q147
+Blanks,The ______ operator repeats a string a specified number of times.,,*,SA_P1_M1_Ch03_Pg047_1,SA_P1_M1_Q148
+Blanks,The ______ and ______ operators can be used to check whether a part of a string exists.,,"['in', 'not in']",SA_P1_M1_Ch03_Pg047_1,SA_P1_M1_Q149
+Match,find(),"Converts the string to uppercase, lowercase, or capitalizes the first character;Replaces all occurrences of a substring with another substring;Splits the string into a list of substrings based on a delimiter;Finds the index of the first occurrence of a substring",Finds the index of the first occurrence of a substring,SA_P1_M1_Ch03_Pg047_1,SA_P1_M1_Q150
+Match,split(),"Finds the index of the first occurrence of a substring;Splits the string into a list of substrings based on a delimiter;Converts the string to uppercase, lowercase, or capitalizes the first character;Replaces all occurrences of a substring with another substring",Splits the string into a list of substrings based on a delimiter,SA_P1_M1_Ch03_Pg047_1,SA_P1_M1_Q151
+Match,replace(),"Splits the string into a list of substrings based on a delimiter;Converts the string to uppercase, lowercase, or capitalizes the first character;Finds the index of the first occurrence of a substring;Replaces all occurrences of a substring with another substring",Replaces all occurrences of a substring with another substring,SA_P1_M1_Ch03_Pg047_1,SA_P1_M1_Q152
+Match,upper()/lower()/capitalize(),"Replaces all occurrences of a substring with another substring;Converts the string to uppercase, lowercase, or capitalizes the first character;Finds the index of the first occurrence of a substring;Splits the string into a list of substrings based on a delimiter","Converts the string to uppercase, lowercase, or capitalizes the first character",SA_P1_M1_Ch03_Pg047_1,SA_P1_M1_Q153
+MCQ,Which of the following is NOT a string method?,endswith();isalpha();count();sort(),sort(),SA_P1_M1_Ch03_Pg047_1,SA_P1_M1_Q154
+MCQ,Which operator is used to check if a character is alphabetic?,isletter();istext();ischar();isalph(),isalph(),SA_P1_M1_Ch03_Pg047_1,SA_P1_M1_Q155
+MCQ,Which method converts a string to uppercase?,upper();uppercase();makeUpper();toUpper(),upper(),SA_P1_M1_Ch03_Pg047_1,SA_P1_M1_Q156
+True/False,The '+' operator can be used to concatenate strings and integers.,True;False,FALSE,SA_P1_M1_Ch03_Pg047_1,SA_P1_M1_Q157
+True/False,The 'startswith()' method checks if a string ends with a specified substring.,True;False,FALSE,SA_P1_M1_Ch03_Pg047_1,SA_P1_M1_Q158
+True/False,The 'count()' method counts the number of occurrences of a character in a string.,True;False,TRUE,SA_P1_M1_Ch03_Pg047_1,SA_P1_M1_Q159
+Blanks,"In Python, we use the ______ statement to iterate character by character in a string.",,for,SA_P1_M1_Ch03_Pg049_1,SA_P1_M1_Q160
+Blanks,Lists are represented using ______ brackets.,,square,SA_P1_M1_Ch03_Pg049_1,SA_P1_M1_Q161
+Blanks,"To access the items from a list in Python, we use ______.",,index,SA_P1_M1_Ch03_Pg049_1,SA_P1_M1_Q162
+Match,String,"A collection that is ordered, indexed, and changeable;A sequence of characters;An object that contains more than one value",A sequence of characters,SA_P1_M1_Ch03_Pg049_1,SA_P1_M1_Q163
+Match,List,"An object that contains more than one value;A collection that is ordered, indexed, and changeable;A sequence of characters","A collection that is ordered, indexed, and changeable",SA_P1_M1_Ch03_Pg049_1,SA_P1_M1_Q164
+Match,Collection,"A sequence of characters;An object that contains more than one value;A collection that is ordered, indexed, and changeable",An object that contains more than one value,SA_P1_M1_Ch03_Pg049_1,SA_P1_M1_Q165
+MCQ,Which of the following is NOT a characteristic of a list in Python?,Changeable;Indexed;Immutable;Ordered,Immutable,SA_P1_M1_Ch03_Pg049_1,SA_P1_M1_Q166
+MCQ,What symbol is used to represent a list in Python?,{};[];();<>,[],SA_P1_M1_Ch03_Pg049_1,SA_P1_M1_Q167
+True/False,Strings in Python are mutable.,True;False,FALSE,SA_P1_M1_Ch03_Pg049_1,SA_P1_M1_Q168
+True/False,Lists in Python can contain duplicate members.,True;False,TRUE,SA_P1_M1_Ch03_Pg049_1,SA_P1_M1_Q169
+Blanks,"We can use negative index to access elements from end of the list, it always starts with __",,-1,SA_P1_M1_Ch03_Pg052_1,SA_P1_M1_Q170
+Blanks,"We can use range (:) operator to access range of elements from the list, with specified __",,step,SA_P1_M1_Ch03_Pg052_1,SA_P1_M1_Q171
+Match,len(),"To add an item at the end;The len() method returns the length of a set;To remove the specified item;To remove the specified index, (or the last item if index is not specified);To add an item at the specified index",The len() method returns the length of a set,SA_P1_M1_Ch03_Pg052_1,SA_P1_M1_Q172
+Match,append(),"The len() method returns the length of a set;To remove the specified item;To add an item at the specified index;To add an item at the end;To remove the specified index, (or the last item if index is not specified)",To add an item at the end,SA_P1_M1_Ch03_Pg052_1,SA_P1_M1_Q173
+Match,insert(),"To add an item at the end;To add an item at the specified index;To remove the specified item;To remove the specified index, (or the last item if index is not specified);The len() method returns the length of a set",To add an item at the specified index,SA_P1_M1_Ch03_Pg052_1,SA_P1_M1_Q174
+Match,remove(),"The len() method returns the length of a set;To add an item at the specified index;To remove the specified item;To add an item at the end;To remove the specified index, (or the last item if index is not specified)",To remove the specified item,SA_P1_M1_Ch03_Pg052_1,SA_P1_M1_Q175
+Match,pop(),"To remove the specified item;To remove the specified index, (or the last item if index is not specified);The len() method returns the length of a set;To add an item at the end;To add an item at the specified index","To remove the specified index, (or the last item if index is not specified)",SA_P1_M1_Ch03_Pg052_1,SA_P1_M1_Q176
+MCQ,Which of the following is not a list method?,insert();len();remove();append(),['remove()'],SA_P1_M1_Ch03_Pg052_1,SA_P1_M1_Q177
+MCQ,"What is the output of the following code snippet?
+
+python
+nos = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+print(nos[1:9:2])
+","[1, 2, 3, 5];[1, 3, 5, 7];[1, 2, 4, 6];[2, 4, 6, 8]","['[2, 4, 6, 8]']",SA_P1_M1_Ch03_Pg052_1,SA_P1_M1_Q178
+True/False,Negative index in a list starts from -1.,True;False,TRUE,SA_P1_M1_Ch03_Pg052_1,SA_P1_M1_Q179
+True/False,The range (:) operator in a list can only be used to access a single element.,True;False,FALSE,SA_P1_M1_Ch03_Pg052_1,SA_P1_M1_Q180
+Blanks,The ________ keyword can be used to delete a specific element from a list by its index or clear the list completely.,,del,SA_P1_M1_Ch03_Pg054_1,SA_P1_M1_Q181
+Blanks,The ________ method appends the elements from a sequence to an existing list.,,extend(),SA_P1_M1_Ch03_Pg054_1,SA_P1_M1_Q182
+Blanks,"To find the index of a particular element in a tuple, the ________ method can be utilized.",,index(),SA_P1_M1_Ch03_Pg054_1,SA_P1_M1_Q183
+Match,Tuple,"Collection of ordered, indexed, and changeable elements;Collection of ordered, indexed, and unchangeable elements","Collection of ordered, indexed, and unchangeable elements",SA_P1_M1_Ch03_Pg054_1,SA_P1_M1_Q184
+Match,List,"Collection of ordered, indexed, and unchangeable elements;Collection of ordered, indexed, and changeable elements","Collection of ordered, indexed, and changeable elements",SA_P1_M1_Ch03_Pg054_1,SA_P1_M1_Q185
+MCQ,Which of the following is a correct way to create a tuple?,my_tuple = ();my_tuple = set();my_tuple = {};my_tuple =,my_tuple = (),SA_P1_M1_Ch03_Pg054_1,SA_P1_M1_Q186
+MCQ,Tuples are considered:,Dynamic;Immutable;Neither mutable nor immutable;Mutable,Immutable,SA_P1_M1_Ch03_Pg054_1,SA_P1_M1_Q187
+True/False,List and tuple data types in Python have the same properties.,True;False,FALSE,SA_P1_M1_Ch03_Pg054_1,SA_P1_M1_Q188
+True/False,Tuples can contain duplicate elements.,True;False,TRUE,SA_P1_M1_Ch03_Pg054_1,SA_P1_M1_Q189
+,,,,SA_P1_M1_Ch03_Pg056_1,SA_P1_M1_Q190
+Blanks,"Sets are unordered, so you cannot access items in a set by referring to an ___________.",,index,SA_P1_M1_Ch03_Pg058_1,SA_P1_M1_Q191
+Blanks,"To add one item to a set, use the ___________ method.",,add(),SA_P1_M1_Ch03_Pg058_1,SA_P1_M1_Q192
+Blanks,"To remove a specific item from a set, use the ___________ method.",,remove(),SA_P1_M1_Ch03_Pg058_1,SA_P1_M1_Q193
+Match,add(),Adds one item to a set;Removes a specified item from a set;Adds multiple items to a set;Removes any item from a set,Adds one item to a set,SA_P1_M1_Ch03_Pg058_1,SA_P1_M1_Q194
+Match,update(),Removes a specified item from a set;Adds multiple items to a set;Removes any item from a set;Adds one item to a set,Adds multiple items to a set,SA_P1_M1_Ch03_Pg058_1,SA_P1_M1_Q195
+Match,remove(),Removes a specified item from a set;Adds one item to a set;Removes any item from a set;Adds multiple items to a set,Removes a specified item from a set,SA_P1_M1_Ch03_Pg058_1,SA_P1_M1_Q196
+Match,pop(),Adds multiple items to a set;Removes any item from a set;Adds one item to a set;Removes a specified item from a set,Removes any item from a set,SA_P1_M1_Ch03_Pg058_1,SA_P1_M1_Q197
+MCQ,Which of the following is NOT a property of sets in Python?,Sets can be indexed;Sets are unordered;Sets can be modified;Sets can contain duplicate items,Sets can contain duplicate items,SA_P1_M1_Ch03_Pg058_1,SA_P1_M1_Q198
+MCQ,Which method is used to loop through the items in a set?,foreach loop;while loop;map() function;for loop,['for loop'],SA_P1_M1_Ch03_Pg058_1,SA_P1_M1_Q199
+MCQ,Which method removes an arbitrary item from a set?,del;discard();remove();pop(),['pop()'],SA_P1_M1_Ch03_Pg058_1,SA_P1_M1_Q200
+True/False,Sets are ordered collections of unique items.,True;False,FALSE,SA_P1_M1_Ch03_Pg058_1,SA_P1_M1_Q201
+True/False,You can add multiple items to a set using the update() method.,True;False,TRUE,SA_P1_M1_Ch03_Pg058_1,SA_P1_M1_Q202
+True/False,The remove() method removes the first occurrence of an item from a set.,True;False,TRUE,SA_P1_M1_Ch03_Pg058_1,SA_P1_M1_Q203
+MCQ,"Which of the following set operation returns a set that contains the items that only exist in set x, and not in set y?",symmetric_difference();difference();intersection();union(),difference(),SA_P1_M1_Ch03_Pg060_1,SA_P1_M1_Q204
+Blanks,The ______ method determines how many items a dictionary has.,,len(),SA_P1_M1_Ch03_Pg062_1,SA_P1_M1_Q205
+Blanks,The ______ method removes the item with the specified key name.,,pop(),SA_P1_M1_Ch03_Pg062_1,SA_P1_M1_Q206
+Blanks,The ______ method removes the last inserted item.,,popitem(),SA_P1_M1_Ch03_Pg062_1,SA_P1_M1_Q207
+Blanks,The ______ method empties the dictionary.,,clear(),SA_P1_M1_Ch03_Pg062_1,SA_P1_M1_Q208
+Match,len(),Removes the last inserted item;Removes the item with the specified key name;Empties the dictionary;Determines how many items a dictionary has,Determines how many items a dictionary has,SA_P1_M1_Ch03_Pg062_1,SA_P1_M1_Q209
+Match,pop(),Removes the last inserted item;Removes the item with the specified key name;Determines how many items a dictionary has;Empties the dictionary,Removes the item with the specified key name,SA_P1_M1_Ch03_Pg062_1,SA_P1_M1_Q210
+Match,popitem(),Empties the dictionary;Removes the item with the specified key name;Determines how many items a dictionary has;Removes the last inserted item,Removes the last inserted item,SA_P1_M1_Ch03_Pg062_1,SA_P1_M1_Q211
+Match,clear(),Removes the item with the specified key name;Determines how many items a dictionary has;Removes the last inserted item;Empties the dictionary,Empties the dictionary,SA_P1_M1_Ch03_Pg062_1,SA_P1_M1_Q212
+MCQ,Which method is used to remove the last inserted item from a dictionary?,len();pop();clear();popitem(),popitem(),SA_P1_M1_Ch03_Pg062_1,SA_P1_M1_Q213
+MCQ,Which method is used to determine the number of items in a dictionary?,pop();clear();popitem();len(),len(),SA_P1_M1_Ch03_Pg062_1,SA_P1_M1_Q214
+True/False,The pop() method removes the first inserted item from a dictionary.,True;False,FALSE,SA_P1_M1_Ch03_Pg062_1,SA_P1_M1_Q215
+True/False,The clear() method empties a dictionary.,True;False,TRUE,SA_P1_M1_Ch03_Pg062_1,SA_P1_M1_Q216
+Blanks,The statements under if clause are only executed if the condition prescribed becomes__________,,TRUE,SA_P1_M1_Ch04_Pg064_1,SA_P1_M1_Q217
+Blanks,The block of code under the if statements are executed if the condition given for if becomes__________,,TRUE,SA_P1_M1_Ch04_Pg064_1,SA_P1_M1_Q218
+Blanks,There could be at most one else statement followed by the if statement and is executed when the if condition is________,,FALSE,SA_P1_M1_Ch04_Pg064_1,SA_P1_M1_Q219
+Match,If statement,"Executes a block of code if a specified condition is true, otherwise executes a different block of code;Allows for multiple conditions to be checked sequentially;Executes a block of code only if a specified condition is true",Executes a block of code only if a specified condition is true,SA_P1_M1_Ch04_Pg064_1,SA_P1_M1_Q220
+Match,If-else statement,"Executes a block of code if a specified condition is true, otherwise executes a different block of code;Executes a block of code only if a specified condition is true;Allows for multiple conditions to be checked sequentially","Executes a block of code if a specified condition is true, otherwise executes a different block of code",SA_P1_M1_Ch04_Pg064_1,SA_P1_M1_Q221
+Match,If-elif-elif-else statement,"Executes a block of code only if a specified condition is true;Allows for multiple conditions to be checked sequentially;Executes a block of code if a specified condition is true, otherwise executes a different block of code",Allows for multiple conditions to be checked sequentially,SA_P1_M1_Ch04_Pg064_1,SA_P1_M1_Q222
+MCQ,Which of the following values is considered true in the context of conditional statements?,1;3;0;2,"['1', '2', '3']",SA_P1_M1_Ch04_Pg064_1,SA_P1_M1_Q223
+MCQ,Which of the following is the correct syntax for an if statement?,if (condition):;if (condition);if condition:;if (condition) then,['if (condition):'],SA_P1_M1_Ch04_Pg064_1,SA_P1_M1_Q224
+MCQ,Which of the following statements is executed if the condition in an if-else statement is false?,None of the statements;The else statements;The if statements;Both the if and else statements,['The else statements'],SA_P1_M1_Ch04_Pg064_1,SA_P1_M1_Q225
+True/False,The if-else statement can have multiple else statements.,True;False,FALSE,SA_P1_M1_Ch04_Pg064_1,SA_P1_M1_Q226
+True/False,The if-elif-elif-else statement allows for only two conditions to be checked.,True;False,FALSE,SA_P1_M1_Ch04_Pg064_1,SA_P1_M1_Q227
+True/False,Conditional statements are used to control the flow of execution in a program.,True;False,TRUE,SA_P1_M1_Ch04_Pg064_1,SA_P1_M1_Q228
+Blanks,The ______ statement allows you to check multiple expressions for TRUE and execute a block of code as soon as one of the conditions evaluates to TRUE.,,elif,SA_P1_M1_Ch04_Pg068_1,SA_P1_M1_Q229
+Blanks,"Unlike ______, for which there can be at most one statement, there can be an arbitrary number of ______ statements following an ______ statement.",,"['else', 'elif', 'if']",SA_P1_M1_Ch04_Pg068_1,SA_P1_M1_Q230
+Match,if statement,Allows you to check multiple expressions for TRUE and execute a block of code if one evaluates to TRUE.;Allows you to execute a block of code if the condition in the if statement is met.;Allows you to execute a block of code if the condition in the if statement is not met.,Allows you to execute a block of code if the condition in the if statement is met.,SA_P1_M1_Ch04_Pg068_1,SA_P1_M1_Q231
+Match,elif statement,Allows you to execute a block of code if the condition in the if statement is met.;Allows you to execute a block of code if the condition in the if statement is not met.;Allows you to check multiple expressions for TRUE and execute a block of code if one evaluates to TRUE.,Allows you to check multiple expressions for TRUE and execute a block of code if one evaluates to TRUE.,SA_P1_M1_Ch04_Pg068_1,SA_P1_M1_Q232
+Match,else statement,Allows you to execute a block of code if the condition in the if statement is met.;Allows you to execute a block of code if the condition in the if statement is not met.;Allows you to check multiple expressions for TRUE and execute a block of code if one evaluates to TRUE.,Allows you to execute a block of code if the condition in the if statement is not met.,SA_P1_M1_Ch04_Pg068_1,SA_P1_M1_Q233
+MCQ,Which of the following is the correct syntax for an if-elif-else statement?,"if expression:
+statement(s)
+elif expression:
+statement(s);if expression1:
+statement(s)
+elif expression2:
+statement(s)
+else:
+statement(s);if expression:
+statement(s)
+else:
+statement(s)","if expression1:
+statement(s)
+elif expression2:
+statement(s)
+else:
+statement(s)",SA_P1_M1_Ch04_Pg068_1,SA_P1_M1_Q234
+MCQ,How many elif statements can follow an if statement?,0;Any number;1,Any number,SA_P1_M1_Ch04_Pg068_1,SA_P1_M1_Q235
+True/False,The else statement is required in an if-elif-else statement.,True;False,FALSE,SA_P1_M1_Ch04_Pg068_1,SA_P1_M1_Q236
+True/False,The elif statement can only check one expression for TRUE.,True;False,FALSE,SA_P1_M1_Ch04_Pg068_1,SA_P1_M1_Q237
+Blanks,The statements under the while loop are executed until the ___________ remains true.,,condition,SA_P1_M1_Ch05_Pg070_1,SA_P1_M1_Q238
+Blanks,The __________ function is used for iterating over a sequence.,,for,SA_P1_M1_Ch05_Pg073_1,SA_P1_M1_Q239
+Blanks,The __________ statement is used to exit from the loop in between.,,Break,SA_P1_M1_Ch05_Pg073_1,SA_P1_M1_Q240
+Blanks,The __________ statement skips only one iteration.,,Continue,SA_P1_M1_Ch05_Pg073_1,SA_P1_M1_Q241
+Match,for,Used for iterating over a sequence;Used to exit from the loop in between;Returns a sequence of numbers;Skips only one iteration,Used for iterating over a sequence,SA_P1_M1_Ch05_Pg073_1,SA_P1_M1_Q242
+Match,Break,Skips only one iteration;Used to exit from the loop in between;Used for iterating over a sequence;Returns a sequence of numbers,Used to exit from the loop in between,SA_P1_M1_Ch05_Pg073_1,SA_P1_M1_Q243
+Match,Continue,Returns a sequence of numbers;Skips only one iteration;Used to exit from the loop in between;Used for iterating over a sequence,Skips only one iteration,SA_P1_M1_Ch05_Pg073_1,SA_P1_M1_Q244
+Match,range(),Returns a sequence of numbers;Used to exit from the loop in between;Skips only one iteration;Used for iterating over a sequence,Returns a sequence of numbers,SA_P1_M1_Ch05_Pg073_1,SA_P1_M1_Q245
+MCQ,Which of the following is used to iterate over a list?,while;if;for;break,for,SA_P1_M1_Ch05_Pg073_1,SA_P1_M1_Q246
+MCQ,What is the default starting value of the range() function?,2;1;0;3,0,SA_P1_M1_Ch05_Pg073_1,SA_P1_M1_Q247
+MCQ,Which statement is used to skip only one iteration in a loop?,return;continue;break;exit,continue,SA_P1_M1_Ch05_Pg073_1,SA_P1_M1_Q248
+True/False,The range() function can only return a sequence of even numbers.,True;False,FALSE,SA_P1_M1_Ch05_Pg073_1,SA_P1_M1_Q249
+True/False,The break statement can be used to exit from a while loop.,True;False,TRUE,SA_P1_M1_Ch05_Pg073_1,SA_P1_M1_Q250
+True/False,The continue statement can be used to exit from a for loop.,True;False,FALSE,SA_P1_M1_Ch05_Pg073_1,SA_P1_M1_Q251
+Blanks,"Functions are blocks of code with a ____, which can perform a task.",,name,SA_P1_M1_Ch06_Pg076_1,SA_P1_M1_Q252
+Blanks,User-defined functions can be defined by the ____ for their project.,,user,SA_P1_M1_Ch06_Pg076_1,SA_P1_M1_Q253
+Blanks,The ____ syntax is used to declare a function.,,def,SA_P1_M1_Ch06_Pg076_1,SA_P1_M1_Q254
+Blanks,The ____ keyword is used to return a value from a function.,,return,SA_P1_M1_Ch06_Pg076_1,SA_P1_M1_Q255
+Match,Function,A block of code with a name that can perform a task;A function that is defined by the user for their project;A function that is predefined in the Python language,A block of code with a name that can perform a task,SA_P1_M1_Ch06_Pg076_1,SA_P1_M1_Q256
+Match,Built-in function,A function that is defined by the user for their project;A block of code with a name that can perform a task;A function that is predefined in the Python language,A function that is predefined in the Python language,SA_P1_M1_Ch06_Pg076_1,SA_P1_M1_Q257
+Match,User-defined function,A function that is predefined in the Python language;A function that is defined by the user for their project;A block of code with a name that can perform a task,A function that is defined by the user for their project,SA_P1_M1_Ch06_Pg076_1,SA_P1_M1_Q258
+MCQ,Which of the following is NOT a function type in Python?,User-defined function;Module function;Class method;Built-in function,Module function,SA_P1_M1_Ch06_Pg076_1,SA_P1_M1_Q259
+MCQ,What is the purpose of using functions?,Error handling;Data manipulation;Code reuse and modular programming;Input/output operations,['Code reuse and modular programming'],SA_P1_M1_Ch06_Pg076_1,SA_P1_M1_Q260
+MCQ,Which of the following is the correct syntax to declare a function in Python?,def fun_name(params):;def fun_name params:;fun_name = def(params):;fun_name def params:,['def fun_name(params):'],SA_P1_M1_Ch06_Pg076_1,SA_P1_M1_Q261
+True/False,Functions can only return a single value.,True;False,FALSE,SA_P1_M1_Ch06_Pg076_1,SA_P1_M1_Q262
+True/False,User-defined functions are always executed before built-in functions.,True;False,FALSE,SA_P1_M1_Ch06_Pg076_1,SA_P1_M1_Q263
+True/False,The 'return' statement is used to terminate the execution of a function.,True;False,TRUE,SA_P1_M1_Ch06_Pg076_1,SA_P1_M1_Q264
+MCQ,What are variables inside function declaration called?,Parameters;Variables;Arguments;Constants,Parameters,SA_P1_M1_Ch06_Pg079_1,SA_P1_M1_Q265
+MCQ,What are variables inside function call called?,Parameters;Variables;Constants;Arguments,Arguments,SA_P1_M1_Ch06_Pg079_1,SA_P1_M1_Q266
+Blanks,"The function ""add"" with keyword arguments has __ parameters: ""a"", ""b"", and ""c"".",,three,SA_P1_M1_Ch06_Pg083_1,SA_P1_M1_Q267
+Blanks,Keyword arguments allow you to pass arguments to a function in __ order.,,any,SA_P1_M1_Ch06_Pg083_1,SA_P1_M1_Q268
+Blanks,"The ""add"" function with default arguments has __ default values: 0 for ""a"", ""b"", and ""c"".",,three,SA_P1_M1_Ch06_Pg083_1,SA_P1_M1_Q269
+Blanks,Variable length arguments are denoted using __ in a function definition.,,*args,SA_P1_M1_Ch06_Pg083_1,SA_P1_M1_Q270
+Blanks,"The ""display_all"" function with variable length arguments treats *args as a __.",,tuple,SA_P1_M1_Ch06_Pg083_1,SA_P1_M1_Q271
+Match,Keyword arguments,Arguments that can be passed to a function with a variable number of values;Arguments that can be passed to a function in any order;Arguments that can be passed to a function with default values,Arguments that can be passed to a function in any order,SA_P1_M1_Ch06_Pg083_1,SA_P1_M1_Q272
+Match,Default arguments,Arguments that can be passed to a function with a variable number of values;Arguments that can be passed to a function in any order;Arguments that can be passed to a function with default values,Arguments that can be passed to a function with default values,SA_P1_M1_Ch06_Pg083_1,SA_P1_M1_Q273
+Match,Variable length arguments,Arguments that can be passed to a function with a variable number of values;Arguments that can be passed to a function in any order;Arguments that can be passed to a function with default values,Arguments that can be passed to a function with a variable number of values,SA_P1_M1_Ch06_Pg083_1,SA_P1_M1_Q274
+MCQ,"Which of the following is NOT a parameter of the ""add"" function with keyword arguments?",a;b;c;d,d,SA_P1_M1_Ch06_Pg083_1,SA_P1_M1_Q275
+MCQ,"What is the default value of the ""c"" parameter in the ""add"" function with default arguments?",0;Error;None;1,0,SA_P1_M1_Ch06_Pg083_1,SA_P1_M1_Q276
+MCQ,"Which of the following calls to the ""display_all"" function will print ""10 20 30""?","display_all((10, 20, 30));display_all({10, 20, 30});display_all(10, 20, 30);display_all([10, 20, 30])","display_all(10, 20, 30)",SA_P1_M1_Ch06_Pg083_1,SA_P1_M1_Q277
+True/False,Keyword arguments must be passed to a function in the same order as they are defined.,True;False,FALSE,SA_P1_M1_Ch06_Pg083_1,SA_P1_M1_Q278
+True/False,Default arguments can only be used if all other parameters are also provided.,True;False,FALSE,SA_P1_M1_Ch06_Pg083_1,SA_P1_M1_Q279
+True/False,Variable length arguments can be used with both keyword and default arguments.,True;False,TRUE,SA_P1_M1_Ch06_Pg083_1,SA_P1_M1_Q280
+Blanks,The **kwargs parameter is treated as a ________.,,['dictionary'],SA_P1_M1_Ch06_Pg086_1,SA_P1_M1_Q281
+Blanks,The function __________ can be used to assign the function call to a variable to hold the returned value from the function.,,['add'],SA_P1_M1_Ch06_Pg086_1,SA_P1_M1_Q282
+Match,**kwargs,Value that is returned by a function;Dictionary that contains the variable-length keyword arguments,Dictionary that contains the variable-length keyword arguments,SA_P1_M1_Ch06_Pg086_1,SA_P1_M1_Q283
+Match,return value,Value that is returned by a function;Dictionary that contains the variable-length keyword arguments,Value that is returned by a function,SA_P1_M1_Ch06_Pg086_1,SA_P1_M1_Q284
+MCQ,Which of the following is the correct syntax to create a function with variable-length keyword arguments?,def display_all(kwargs);def display_all(**kwargs),['def display_all(**kwargs)'],SA_P1_M1_Ch06_Pg086_1,SA_P1_M1_Q285
+MCQ,What is the purpose of the return statement in a function?,To return a value from the function;To terminate the execution of the function,['To return a value from the function'],SA_P1_M1_Ch06_Pg086_1,SA_P1_M1_Q286
+True/False,The **kwargs parameter is only available in Python 3.,True;False,FALSE,SA_P1_M1_Ch06_Pg086_1,SA_P1_M1_Q287
+True/False,A function can return multiple values.,True;False,FALSE,SA_P1_M1_Ch06_Pg086_1,SA_P1_M1_Q288
+Blanks,"Functions defined without a name, are known as _____ functions.",,['Anonymous'],SA_P1_M1_Ch06_Pg088_1,SA_P1_M1_Q289
+Blanks,The keyword used to define anonymous functions is _____ .,,['lambda'],SA_P1_M1_Ch06_Pg088_1,SA_P1_M1_Q290
+Blanks,A lambda function can have only one _____ .,,['expression'],SA_P1_M1_Ch06_Pg088_1,SA_P1_M1_Q291
+Match,Lambda function,A function defined without a name.;A function that takes any number of arguments.,A function that takes any number of arguments.,SA_P1_M1_Ch06_Pg088_1,SA_P1_M1_Q292
+Match,Anonymous function,A function defined without a name.;A function that takes any number of arguments.,A function defined without a name.,SA_P1_M1_Ch06_Pg088_1,SA_P1_M1_Q293
+True/False,Lambda functions can have multiple expressions.,True;False,FALSE,SA_P1_M1_Ch06_Pg088_1,SA_P1_M1_Q294
+True/False,Anonymous functions are defined using the 'lambda' keyword.,True;False,TRUE,SA_P1_M1_Ch06_Pg088_1,SA_P1_M1_Q295
+Blanks,"Any real world entity is called an _____ such as Employee, Student, Book and more",,object,SA_P1_M1_Ch07_Pg090_1,SA_P1_M1_Q296
+Blanks, In programming terms a class is a user defined data type which contains related variable(_____) and methods(_____) together,,"['attributes', 'functionalities']",SA_P1_M1_Ch07_Pg090_1,SA_P1_M1_Q297
+Blanks, The main advantage of classes and objects is _____ programming and code _____,,"['object centric', 'reuse']",SA_P1_M1_Ch07_Pg090_1,SA_P1_M1_Q298
+Match,Class,A variable within a class;A blueprint of an object;A function within a class;A real world entity,A blueprint of an object,SA_P1_M1_Ch07_Pg090_1,SA_P1_M1_Q299
+Match,Object,A real world entity;A blueprint of an object;A variable within a class;A function within a class,A real world entity,SA_P1_M1_Ch07_Pg090_1,SA_P1_M1_Q300
+Match,Attribute,A function within a class;A blueprint of an object;A variable within a class;A real world entity,A variable within a class,SA_P1_M1_Ch07_Pg090_1,SA_P1_M1_Q301
+Match,Method,A real world entity;A variable within a class;A function within a class;A blueprint of an object,A function within a class,SA_P1_M1_Ch07_Pg090_1,SA_P1_M1_Q302
+MCQ,Which of the following is NOT an advantage of object-oriented programming?,Modularity;Code reuse;Encapsulation;Increased complexity,Increased complexity,SA_P1_M1_Ch07_Pg090_1,SA_P1_M1_Q303
+MCQ,What is the purpose of the self parameter in a method?,To return the result of the method;To define the type of the object;To pass arguments to the method;To refer to the current object,To refer to the current object,SA_P1_M1_Ch07_Pg090_1,SA_P1_M1_Q304
+True/False,Classes and objects are the same thing.,True;False,FALSE,SA_P1_M1_Ch07_Pg090_1,SA_P1_M1_Q305
+True/False,"In Python, the class name must start with a lowercase letter.",True;False,FALSE,SA_P1_M1_Ch07_Pg090_1,SA_P1_M1_Q306
+Blanks,"To create an object, we use the syntax _________________",,obj_var = class_name(),SA_P1_M1_Ch07_Pg093_1,SA_P1_M1_Q307
+Blanks,The ________________ method is called automatically when an object is created.,,__init__(),SA_P1_M1_Ch07_Pg093_1,SA_P1_M1_Q308
+Match,class,A blueprint for creating objects;Special method for initializing properties while creating an object;Instance of a class,A blueprint for creating objects,SA_P1_M1_Ch07_Pg093_1,SA_P1_M1_Q309
+Match,object,Instance of a class;A blueprint for creating objects;Special method for initializing properties while creating an object,Instance of a class,SA_P1_M1_Ch07_Pg093_1,SA_P1_M1_Q310
+Match,initializer,Special method for initializing properties while creating an object;Instance of a class;A blueprint for creating objects,Special method for initializing properties while creating an object,SA_P1_M1_Ch07_Pg093_1,SA_P1_M1_Q311
+MCQ,Which of the following is the correct syntax for creating an object in Python?,obj_var = class_name();obj_var = class_name.;obj_var = Class_name,obj_var = class_name(),SA_P1_M1_Ch07_Pg093_1,SA_P1_M1_Q312
+MCQ,What is the purpose of an initializer method in Python?,To define the behavior of an object;To set initial values for object properties;To check if an object is valid,To set initial values for object properties,SA_P1_M1_Ch07_Pg093_1,SA_P1_M1_Q313
+True/False,Objects are created using the __init__() method.,True;False,FALSE,SA_P1_M1_Ch07_Pg093_1,SA_P1_M1_Q314
+True/False,Initializers can only be defined once in a class.,True;False,TRUE,SA_P1_M1_Ch07_Pg093_1,SA_P1_M1_Q315
+Blanks,Inheritance is used to _____________ properties from existing class to the new class.,,['Extending'],SA_P1_M1_Ch07_Pg096_1,SA_P1_M1_Q316
+Blanks,The main use of inheritance is _____________,,['code reuse'],SA_P1_M1_Ch07_Pg096_1,SA_P1_M1_Q317
+Blanks,Three types of inheritance are: _____________,,"['Simple', 'Hierarchical', 'Multilevel']",SA_P1_M1_Ch07_Pg096_1,SA_P1_M1_Q318
+Blanks,One benefit of inheritance is _____________,,['Less code repetition'],SA_P1_M1_Ch07_Pg096_1,SA_P1_M1_Q319
+Match,Inheritance,A class inherits from a single parent class.;A class inherits from multiple parent classes.;Extending properties from existing class to the new class,Extending properties from existing class to the new class,SA_P1_M1_Ch07_Pg096_1,SA_P1_M1_Q320
+Match,Simple,A class inherits from a single parent class.;Extending properties from existing class to the new class;A class inherits from multiple parent classes.,A class inherits from a single parent class.,SA_P1_M1_Ch07_Pg096_1,SA_P1_M1_Q321
+Match,Hierarchical,A class inherits from multiple parent classes.;Extending properties from existing class to the new class;A class inherits from a single parent class.,A class inherits from multiple parent classes.,SA_P1_M1_Ch07_Pg096_1,SA_P1_M1_Q322
+MCQ,Which of the following is NOT a type of inheritance?,Polymorphism;Hierarchical;Simple;Multilevel,['Polymorphism'],SA_P1_M1_Ch07_Pg096_1,SA_P1_M1_Q323
+MCQ,What is a benefit of Python inheritance?,All of the above;Structured code;Code reuse;Scalability,['All of the above'],SA_P1_M1_Ch07_Pg096_1,SA_P1_M1_Q324
+True/False,Inheritance is a way to create new classes without any existing classes.,True;False,FALSE,SA_P1_M1_Ch07_Pg096_1,SA_P1_M1_Q325
+True/False,Structured code is a benefit of inheritance.,True;False,TRUE,SA_P1_M1_Ch07_Pg096_1,SA_P1_M1_Q326
+Blanks,The class _______ defines the properties and methods common to all its derived classes.,,Person,SA_P1_M1_Ch07_Pg098_1,SA_P1_M1_Q327
+Blanks,The method _______ is used to access the methods and properties of the parent class from the child class.,,super(),SA_P1_M1_Ch07_Pg098_1,SA_P1_M1_Q328
+Blanks,The child class _______ inherits all the properties and methods of the parent class.,,Student,SA_P1_M1_Ch07_Pg098_1,SA_P1_M1_Q329
+Match,Inheritance,The child class that inherits the properties and methods of the parent class;A method used to access the properties and methods of the parent class from the child class;The parent class that defines common properties and methods for all its derived classes;A mechanism that allows a class to inherit the properties and methods of another class,A mechanism that allows a class to inherit the properties and methods of another class,SA_P1_M1_Ch07_Pg098_1,SA_P1_M1_Q330
+Match,Person,The parent class that defines common properties and methods for all its derived classes;The child class that inherits the properties and methods of the parent class;A mechanism that allows a class to inherit the properties and methods of another class;A method used to access the properties and methods of the parent class from the child class,The parent class that defines common properties and methods for all its derived classes,SA_P1_M1_Ch07_Pg098_1,SA_P1_M1_Q331
+Match,Student,The child class that inherits the properties and methods of the parent class;The parent class that defines common properties and methods for all its derived classes;A method used to access the properties and methods of the parent class from the child class;A mechanism that allows a class to inherit the properties and methods of another class,The child class that inherits the properties and methods of the parent class,SA_P1_M1_Ch07_Pg098_1,SA_P1_M1_Q332
+Match,Super(),The child class that inherits the properties and methods of the parent class;A method used to access the properties and methods of the parent class from the child class;A mechanism that allows a class to inherit the properties and methods of another class;The parent class that defines common properties and methods for all its derived classes,A method used to access the properties and methods of the parent class from the child class,SA_P1_M1_Ch07_Pg098_1,SA_P1_M1_Q333
+MCQ,Which of the following is the correct syntax to define a parent class in Python?,class parent:;define Parent():;class Parent:;create Parent():,class Parent:,SA_P1_M1_Ch07_Pg098_1,SA_P1_M1_Q334
+MCQ,What is the purpose of the 'super()' function in inheritance?,To override methods from the parent class;To define the parent class;To inherit properties and methods from the parent class;To create a new instance of the parent class,To inherit properties and methods from the parent class,SA_P1_M1_Ch07_Pg098_1,SA_P1_M1_Q335
+MCQ,Which of the following is a child class of the 'Person' class in the given Python code?,Person;Teacher;Employee;Student,Student,SA_P1_M1_Ch07_Pg098_1,SA_P1_M1_Q336
+True/False,Inheritance is a mechanism that allows a class to inherit the properties and methods of multiple parent classes.,True;False,FALSE,SA_P1_M1_Ch07_Pg098_1,SA_P1_M1_Q337
+True/False,The 'super()' function can only be used in the constructor of a child class.,True;False,FALSE,SA_P1_M1_Ch07_Pg098_1,SA_P1_M1_Q338
+True/False,A child class can override methods inherited from its parent class.,True;False,TRUE,SA_P1_M1_Ch07_Pg098_1,SA_P1_M1_Q339
+Blanks,"Files are named locations on disk to store related __________,",,information,SA_P1_M1_Ch08_Pg100_1,SA_P1_M1_Q340
+Blanks,"File operations are as follows:,",,"* Open a file
+
+* Read or write (perform operation)
+
+* Close the file",SA_P1_M1_Ch08_Pg100_1,SA_P1_M1_Q341
+Match,Files,"Read or write (perform operation);They serve as a permanent data storage device in non-volatile memory;We use open() function to open a file, which returns file descripter/reference",They serve as a permanent data storage device in non-volatile memory,SA_P1_M1_Ch08_Pg100_1,SA_P1_M1_Q342
+Match,Open a file,"We use open() function to open a file, which returns file descripter/reference;They serve as a permanent data storage device in non-volatile memory;Read or write (perform operation)","We use open() function to open a file, which returns file descripter/reference",SA_P1_M1_Ch08_Pg100_1,SA_P1_M1_Q343
+Match,Close the file,"Read or write (perform operation);We use open() function to open a file, which returns file descripter/reference;They serve as a permanent data storage device in non-volatile memory",Read or write (perform operation),SA_P1_M1_Ch08_Pg100_1,SA_P1_M1_Q344
+MCQ,Which of the following is the correct syntax to open a file?,"file = open(‘myfile.txt’, ‘read’);open(‘myfile.txt’, ‘w’);file = openfile(‘myfile.txt’, ‘w’);openfile(‘myfile.txt’, ‘w’, [buffer])","file = open(‘myfile.txt’, ‘w’)",SA_P1_M1_Ch08_Pg100_1,SA_P1_M1_Q345
+True/False,Files are temporary locations on disk to store related information,True;False,FALSE,SA_P1_M1_Ch08_Pg100_1,SA_P1_M1_Q346
+True/False,The open() function returns the file reference,True;False,TRUE,SA_P1_M1_Ch08_Pg100_1,SA_P1_M1_Q347
+Match,r,Opens a file for reading;Opens in text mode;Opens a file for appending at the end of the file without truncating it,Opens a file for reading,SA_P1_M1_Ch08_Pg103_1,SA_P1_M1_Q348
+Match,w,Opens in text mode;Opens a file for reading;Opens a file for appending at the end of the file without truncating it,Opens a file for writing. Creates a new file if it does not exist or truncates the file if it exists.,SA_P1_M1_Ch08_Pg103_1,SA_P1_M1_Q349
+Match,a,Opens a file for reading;Opens a file for appending at the end of the file without truncating it;Opens in text mode,Opens a file for appending at the end of the file without truncating it. Creates a new file if it does not exist.,SA_P1_M1_Ch08_Pg103_1,SA_P1_M1_Q350
+Match,write(s),Reads and returns a list of lines from the file;Reads at most n characters from the file;Writes the string s to the file;Writes a list of lines to the file;Returns an integer that represents the current position of the file's object,Writes the string s to the file,SA_P1_M1_Ch08_Pg103_1,SA_P1_M1_Q351
+Match,writelines(lines),Reads and returns a list of lines from the file;Writes the string s to the file;Returns an integer that represents the current position of the file's object;Reads at most n characters from the file;Writes a list of lines to the file,Writes a list of lines to the file,SA_P1_M1_Ch08_Pg103_1,SA_P1_M1_Q352
+Match,read(n),Returns an integer that represents the current position of the file's object;Writes a list of lines to the file;Reads at most n characters from the file;Reads and returns a list of lines from the file;Writes the string s to the file,Reads at most n characters from the file,SA_P1_M1_Ch08_Pg103_1,SA_P1_M1_Q353
+Match,readline(),Returns an integer that represents the current position of the file's object;Writes a list of lines to the file;Writes the string s to the file;Reads and returns a list of lines from the file;Reads at most n characters from the file,Reads and returns one line from the file,SA_P1_M1_Ch08_Pg103_1,SA_P1_M1_Q354
+Match,readlines(),Reads at most n characters from the file;Writes the string s to the file;Reads and returns a list of lines from the file;Writes a list of lines to the file;Returns an integer that represents the current position of the file's object,Reads and returns a list of lines from the file,SA_P1_M1_Ch08_Pg103_1,SA_P1_M1_Q355
+Blanks,The open() function opens a file in __________ mode by default.,,read,SA_P1_M1_Ch08_Pg105_1,SA_P1_M1_Q356
+Blanks,The __________ method is used to write data to a file.,,write,SA_P1_M1_Ch08_Pg105_1,SA_P1_M1_Q357
+Blanks,The __________ method is used to close a file.,,close,SA_P1_M1_Ch08_Pg105_1,SA_P1_M1_Q358
+Blanks,The __________ method is used to read data from a file.,,read,SA_P1_M1_Ch08_Pg105_1,SA_P1_M1_Q359
+Blanks,The __________ method is used to read all the lines of a file as a list.,,readlines,SA_P1_M1_Ch08_Pg105_1,SA_P1_M1_Q360
+Match,open(),Reads data from a file.;Reads all the lines of a file as a list.;Writes data to a file.;Opens a file in read mode.;Closes a file.,Opens a file in read mode.,SA_P1_M1_Ch08_Pg105_1,SA_P1_M1_Q361
+Match,write(),Opens a file in read mode.;Writes data to a file.;Closes a file.;Reads all the lines of a file as a list.;Reads data from a file.,Writes data to a file.,SA_P1_M1_Ch08_Pg105_1,SA_P1_M1_Q362
+Match,close(),Reads all the lines of a file as a list.;Writes data to a file.;Reads data from a file.;Opens a file in read mode.;Closes a file.,Closes a file.,SA_P1_M1_Ch08_Pg105_1,SA_P1_M1_Q363
+Match,read(),Opens a file in read mode.;Reads all the lines of a file as a list.;Reads data from a file.;Writes data to a file.;Closes a file.,Reads data from a file.,SA_P1_M1_Ch08_Pg105_1,SA_P1_M1_Q364
+Match,readlines(),Opens a file in read mode.;Closes a file.;Reads all the lines of a file as a list.;Writes data to a file.;Reads data from a file.,Reads all the lines of a file as a list.,SA_P1_M1_Ch08_Pg105_1,SA_P1_M1_Q365
+MCQ,Which of the following modes is used to open a file for writing?,r+;a;r;w,w,SA_P1_M1_Ch08_Pg105_1,SA_P1_M1_Q366
+MCQ,Which of the following methods is used to flush the contents of a file to disk?,close();flush();read();write(),flush(),SA_P1_M1_Ch08_Pg105_1,SA_P1_M1_Q367
+MCQ,Which of the following methods is used to read all the lines of a file as a list?,readlines();read();close();write(),readlines(),SA_P1_M1_Ch08_Pg105_1,SA_P1_M1_Q368
+True/False,The open() function can be used to open a file in write mode.,True;False,TRUE,SA_P1_M1_Ch08_Pg105_1,SA_P1_M1_Q369
+True/False,The write() method can be used to read data from a file.,True;False,FALSE,SA_P1_M1_Ch08_Pg105_1,SA_P1_M1_Q370
+True/False,The close() method must be called before reading data from a file.,True;False,FALSE,SA_P1_M1_Ch08_Pg105_1,SA_P1_M1_Q371
+True/False,The readlines() method returns a tuple of lines.,True;False,FALSE,SA_P1_M1_Ch08_Pg105_1,SA_P1_M1_Q372
+Blanks,Errors that arise during runtime execution are termed as _________.,,exceptions,SA_P1_M1_Ch09_Pg108_1,SA_P1_M1_Q373
+Blanks,The exception handling method involves the usage of _________.,,try-except-finally,SA_P1_M1_Ch09_Pg108_1,SA_P1_M1_Q374
+Match,IndexError,Unable to perform an input or output operation;Failure to import a module;Division by zero;Attempting to perform a calculation with incorrect data types;Attempting to access an element outside the range of an array,Attempting to access an element outside the range of an array,SA_P1_M1_Ch09_Pg108_1,SA_P1_M1_Q375
+Match,ImportError,Failure to import a module;Attempting to access an element outside the range of an array;Attempting to perform a calculation with incorrect data types;Unable to perform an input or output operation;Division by zero,Failure to import a module,SA_P1_M1_Ch09_Pg108_1,SA_P1_M1_Q376
+Match,IOError,Division by zero;Unable to perform an input or output operation;Attempting to access an element outside the range of an array;Attempting to perform a calculation with incorrect data types;Failure to import a module,Unable to perform an input or output operation,SA_P1_M1_Ch09_Pg108_1,SA_P1_M1_Q377
+Match,TypeError,Attempting to access an element outside the range of an array;Division by zero;Failure to import a module;Unable to perform an input or output operation;Attempting to perform a calculation with incorrect data types,Attempting to perform a calculation with incorrect data types,SA_P1_M1_Ch09_Pg108_1,SA_P1_M1_Q378
+Match,ZeroDivisionError,Attempting to perform a calculation with incorrect data types;Failure to import a module;Division by zero;Attempting to access an element outside the range of an array;Unable to perform an input or output operation,Division by zero,SA_P1_M1_Ch09_Pg108_1,SA_P1_M1_Q379
+MCQ,Which of the following is NOT a standard exception in Python?,ImportError;IndexError;ZeroDivisionError;TypeError;FileNotFoundError,FileNotFoundError,SA_P1_M1_Ch09_Pg108_1,SA_P1_M1_Q380
+MCQ,Which clause is executed if an exception occurs during the execution of the try clause?,except;import;def;try;finally,except,SA_P1_M1_Ch09_Pg108_1,SA_P1_M1_Q381
+True/False,All exceptions in Python are handled by the try-except-finally method.,True;False,TRUE,SA_P1_M1_Ch09_Pg108_1,SA_P1_M1_Q382
+True/False,The finally block is mandatory in exception handling.,True;False,FALSE,SA_P1_M1_Ch09_Pg108_1,SA_P1_M1_Q383
+Blanks,"Inside the 'try' block, the division operation is performed and the result is stored in the variable _____________",,c,SA_P1_M1_Ch09_Pg111_1,SA_P1_M1_Q384
+Blanks,The 'except' block with 'ZeroDivisionError' exception is executed when the denominator is _____________,,0,SA_P1_M1_Ch09_Pg111_1,SA_P1_M1_Q385
+Blanks,The 'finally' block is executed _____________ the occurrence of any exception or not,,regardless of,SA_P1_M1_Ch09_Pg111_1,SA_P1_M1_Q386
+Match,Try-Except-Finally block,"A block that always executes, regardless of exceptions being raised.;An exception raised when division by zero is attempted.;A Python block that handles errors and executes code accordingly.",A Python block that handles errors and executes code accordingly.,SA_P1_M1_Ch09_Pg111_1,SA_P1_M1_Q387
+Match,ZeroDivisionError,"A Python block that handles errors and executes code accordingly.;A block that always executes, regardless of exceptions being raised.;An exception raised when division by zero is attempted.",An exception raised when division by zero is attempted.,SA_P1_M1_Ch09_Pg111_1,SA_P1_M1_Q388
+Match,finally block,"An exception raised when division by zero is attempted.;A Python block that handles errors and executes code accordingly.;A block that always executes, regardless of exceptions being raised.","A block that always executes, regardless of exceptions being raised.",SA_P1_M1_Ch09_Pg111_1,SA_P1_M1_Q389
+MCQ,Which of the following is NOT a type of exception handled in the code snippet?,ArithmeticError;ZeroDivisionError;Exception,ArithmeticError,SA_P1_M1_Ch09_Pg111_1,SA_P1_M1_Q390
+MCQ,"What is the output when the divider function is called with arguments (2, 2)?",0;a/b result in 0;1,a/b result in 0,SA_P1_M1_Ch09_Pg111_1,SA_P1_M1_Q391
+True/False,The 'try' block is only executed if no exceptions occur.,True;False,FALSE,SA_P1_M1_Ch09_Pg111_1,SA_P1_M1_Q392
+True/False,The 'except' block can handle multiple different types of exceptions.,True;False,TRUE,SA_P1_M1_Ch09_Pg111_1,SA_P1_M1_Q393
+True/False,The 'finally' block is executed before any 'except' blocks.,True;False,FALSE,SA_P1_M1_Ch09_Pg111_1,SA_P1_M1_Q394
+Blanks,A database is a collection of _____ into a meaningful format.,,['raw data'],SA_P1_M1_Ch10_Pg113_1,SA_P1_M1_Q395
+Blanks,We use _____ software to manipulate databases.,,['RDBMS'],SA_P1_M1_Ch10_Pg113_1,SA_P1_M1_Q396
+Match,MySQL,"A popular RDBMS owned by Oracle Corporation;A popular RDBMS owned by Microsoft;A very fast, multithreaded, multi-user, and robust database server","A very fast, multithreaded, multi-user, and robust database server",SA_P1_M1_Ch10_Pg113_1,SA_P1_M1_Q397
+Match,Oracle,"A popular RDBMS owned by Oracle Corporation;A very fast, multithreaded, multi-user, and robust database server;A popular RDBMS owned by Microsoft",A popular RDBMS owned by Oracle Corporation,SA_P1_M1_Ch10_Pg113_1,SA_P1_M1_Q398
+Match,MS SQL Server,"A popular RDBMS owned by Microsoft;A popular RDBMS owned by Oracle Corporation;A very fast, multithreaded, multi-user, and robust database server",A popular RDBMS owned by Microsoft,SA_P1_M1_Ch10_Pg113_1,SA_P1_M1_Q399
+MCQ,Which of the following is NOT a feature of MySQL?,User-friendly;Multithreaded;Open source;Fast,['User-friendly'],SA_P1_M1_Ch10_Pg113_1,SA_P1_M1_Q400
+MCQ,Which programming language is used to create and manipulate database objects in MySQL?,Python;Java;C++;SQL,['SQL'],SA_P1_M1_Ch10_Pg113_1,SA_P1_M1_Q401
+True/False,Databases are only used to store raw data.,True;False,FALSE,SA_P1_M1_Ch10_Pg113_1,SA_P1_M1_Q402
+True/False,SQL is a case sensitive language.,True;False,FALSE,SA_P1_M1_Ch10_Pg113_1,SA_P1_M1_Q403
+Blanks,"To download the MySQL installer, visit the following URL:",,https://dev.mysql.com/downloads/installer/,SA_P1_M1_Ch10_Pg117_1,SA_P1_M1_Q404
+Blanks,The installer file name is:,,mysql-installer-community-8.0.31.0.msi,SA_P1_M1_Ch10_Pg117_1,SA_P1_M1_Q405
+Blanks,"To create a database, use the following command:",,Create database db1;,SA_P1_M1_Ch10_Pg117_1,SA_P1_M1_Q406
+Blanks,"To display existing databases, use the command:",,Show databases;,SA_P1_M1_Ch10_Pg117_1,SA_P1_M1_Q407
+Blanks,"To connect to a database, use the command:",,Use db1;,SA_P1_M1_Ch10_Pg117_1,SA_P1_M1_Q408
+Blanks,"To remove a database, use the command:",,Drop database db1;,SA_P1_M1_Ch10_Pg117_1,SA_P1_M1_Q409
+Blanks,The primary key of a table makes each row:,,unique,SA_P1_M1_Ch10_Pg117_1,SA_P1_M1_Q410
+Match,MySQL,A logical structure within a database that stores data in the form of rows and columns.;A collection of columns that represent a specific entity.;A database management system used for storing and managing data.;A column that uniquely identifies each row in a table.;A collection of related data stored in a structured format.,A database management system used for storing and managing data.,SA_P1_M1_Ch10_Pg117_1,SA_P1_M1_Q411
+Match,Database,A column that uniquely identifies each row in a table.;A collection of columns that represent a specific entity.;A database management system used for storing and managing data.;A logical structure within a database that stores data in the form of rows and columns.;A collection of related data stored in a structured format.,A collection of related data stored in a structured format.,SA_P1_M1_Ch10_Pg117_1,SA_P1_M1_Q412
+Match,Table,A collection of columns that represent a specific entity.;A column that uniquely identifies each row in a table.;A logical structure within a database that stores data in the form of rows and columns.;A collection of related data stored in a structured format.;A database management system used for storing and managing data.,A logical structure within a database that stores data in the form of rows and columns.,SA_P1_M1_Ch10_Pg117_1,SA_P1_M1_Q413
+Match,Column,A logical structure within a database that stores data in the form of rows and columns.;A database management system used for storing and managing data.;A collection of related data stored in a structured format.;A collection of columns that represent a specific entity.;A column that uniquely identifies each row in a table.,A collection of columns that represent a specific entity.,SA_P1_M1_Ch10_Pg117_1,SA_P1_M1_Q414
+Match,Primary key,A database management system used for storing and managing data.;A logical structure within a database that stores data in the form of rows and columns.;A collection of related data stored in a structured format.;A collection of columns that represent a specific entity.;A column that uniquely identifies each row in a table.,A column that uniquely identifies each row in a table.,SA_P1_M1_Ch10_Pg117_1,SA_P1_M1_Q415
+MCQ,Which of the following data types is used to store numeric values with a decimal point?,int;varchar;numeric;char,['numeric'],SA_P1_M1_Ch10_Pg117_1,SA_P1_M1_Q416
+MCQ,What is the purpose of the NOT NULL constraint on a column?,To prevent null values in the column.;To set the default value of the column to null.;To allow null values in the column.;To make the column unique.,['To prevent null values in the column.'],SA_P1_M1_Ch10_Pg117_1,SA_P1_M1_Q417
+MCQ,Which of the following commands is used to display existing databases?,Use database;Create database;Show databases;Drop database,['Show databases'],SA_P1_M1_Ch10_Pg117_1,SA_P1_M1_Q418
+True/False,The MySQL installer offers advanced options for customizing the installation.,True;False,FALSE,SA_P1_M1_Ch10_Pg117_1,SA_P1_M1_Q419
+True/False,A database can only contain one table.,True;False,FALSE,SA_P1_M1_Ch10_Pg117_1,SA_P1_M1_Q420
+True/False,The primary key of a table can be a composite key.,True;False,FALSE,SA_P1_M1_Ch10_Pg117_1,SA_P1_M1_Q421
+Blanks,The syntax to insert a row into a table is ____,,"insert into table_name values(column1_value, column2_value, ..., columnN_value)",SA_P1_M1_Ch10_Pg120_1,SA_P1_M1_Q422
+Blanks,"To delete all rows from a table, the syntax is ____",,delete from table_name,SA_P1_M1_Ch10_Pg120_1,SA_P1_M1_Q423
+Blanks,"To update rows in a table, the syntax is ____",,"update table_name set column1_name=column1_value, column2_name=column2_value, ..., columnN_name=columnN_value",SA_P1_M1_Ch10_Pg120_1,SA_P1_M1_Q424
+Match,insert,modifying existing rows in a table;removing rows from a table;adding a new row to a table,adding a new row to a table,SA_P1_M1_Ch10_Pg120_1,SA_P1_M1_Q425
+Match,delete,removing rows from a table;adding a new row to a table;modifying existing rows in a table,removing rows from a table,SA_P1_M1_Ch10_Pg120_1,SA_P1_M1_Q426
+Match,update,modifying existing rows in a table;removing rows from a table;adding a new row to a table,modifying existing rows in a table,SA_P1_M1_Ch10_Pg120_1,SA_P1_M1_Q427
+MCQ,Which of the following is the correct syntax to insert a row into a table with specified column names?,"insert into table_name(column1_name, column2_name, ..., columnN_name) values(column1_value, column2_value, ..., columnN_value);insert into table_name values(column1_value, column2_value, ..., columnN_value);insert into table_name(column1_name, column2_name, ..., columnN_name) values(column1_value, column2_value);insert into table_name(column1_name, column2_name, ..., columnN_name) value(column1_value, column2_value, ..., columnN_value)","insert into table_name(column1_name, column2_name, ..., columnN_name) values(column1_value, column2_value, ..., columnN_value)",SA_P1_M1_Ch10_Pg120_1,SA_P1_M1_Q428
+MCQ,Which of the following is the correct syntax to delete all rows from a table?,drop table table_name;delete * from table_name;delete from table_name where condition;delete from table_name,delete from table_name,SA_P1_M1_Ch10_Pg120_1,SA_P1_M1_Q429
+MCQ,Which of the following is the correct syntax to update a row in a table?,"update table_name set (column1_name, column2_name, ..., columnN_name)=(column1_value, column2_value, ..., columnN_value);update table_name set column1_name=column1_value, column2_name=column2_value, ..., columnN_name=columnN_value;update table_name set column1_name=column1_value, column2_name=column2_value, ..., columnN_name=columnN_value where condition;update table_name(column1_name, column2_name, ..., columnN_name) values(column1_value, column2_value, ..., columnN_value)","update table_name set column1_name=column1_value, column2_name=column2_value, ..., columnN_name=columnN_value",SA_P1_M1_Ch10_Pg120_1,SA_P1_M1_Q430
+True/False,The where clause is required to delete rows from a table.,True;False,FALSE,SA_P1_M1_Ch10_Pg120_1,SA_P1_M1_Q431
+True/False,The where clause is required to update rows in a table.,True;False,FALSE,SA_P1_M1_Ch10_Pg120_1,SA_P1_M1_Q432
+True/False,It is possible to insert rows into a table without specifying column names.,True;False,TRUE,SA_P1_M1_Ch10_Pg120_1,SA_P1_M1_Q433
+True/False,The delete command can be used to remove specific rows from a table.,True;False,TRUE,SA_P1_M1_Ch10_Pg120_1,SA_P1_M1_Q434
+Blanks,The asterisk (*) in a SQL statement means __________.,,['all columns'],SA_P1_M1_Ch10_Pg123_1,SA_P1_M1_Q435
+Match,count(),Returns the maximum value in a column;Returns the minimum value in a column;Returns the sum of all values in a column;Returns the number of rows in a table;Returns the average value in a column,Returns the number of rows in a table,SA_P1_M1_Ch10_Pg123_1,SA_P1_M1_Q436
+Match,max(),Returns the minimum value in a column;Returns the maximum value in a column;Returns the number of rows in a table;Returns the sum of all values in a column;Returns the average value in a column,Returns the maximum value in a column,SA_P1_M1_Ch10_Pg123_1,SA_P1_M1_Q437
+Match,min(),Returns the average value in a column;Returns the sum of all values in a column;Returns the minimum value in a column;Returns the maximum value in a column;Returns the number of rows in a table,Returns the minimum value in a column,SA_P1_M1_Ch10_Pg123_1,SA_P1_M1_Q438
+Match,sum(),Returns the average value in a column;Returns the minimum value in a column;Returns the sum of all values in a column;Returns the maximum value in a column;Returns the number of rows in a table,Returns the sum of all values in a column,SA_P1_M1_Ch10_Pg123_1,SA_P1_M1_Q439
+Match,avg(),Returns the sum of all values in a column;Returns the number of rows in a table;Returns the minimum value in a column;Returns the average value in a column;Returns the maximum value in a column,Returns the average value in a column,SA_P1_M1_Ch10_Pg123_1,SA_P1_M1_Q440
+MCQ,Which of the following SQL statements retrieves all rows in a table named 'product' in ascending order by the 'price' column?,"select pname, price from product where pid = 1000;;select * from product order by price;;select * from product order by price desc;;select * from product where price > 1000;",['select * from product order by price;'],SA_P1_M1_Ch10_Pg123_1,SA_P1_M1_Q441
+True/False,The 'where' clause in a SQL statement is used to filter rows based on a condition.,True;False,TRUE,SA_P1_M1_Ch10_Pg123_1,SA_P1_M1_Q442
+Blanks,_____ performs operations on groups.,,Group by,SA_P1_M1_Ch10_Pg126_1,SA_P1_M1_Q443
+Blanks,"To connect to a database from Python, we need a _____ (simply api/library).",,database driver,SA_P1_M1_Ch10_Pg126_1,SA_P1_M1_Q444
+Blanks,Database driver is _____ to the database.,,specific,SA_P1_M1_Ch10_Pg126_1,SA_P1_M1_Q445
+Blanks,"To connect to MySQL from Python, we need to install the _____ driver using pip.",,mysql-connector-python,SA_P1_M1_Ch10_Pg126_1,SA_P1_M1_Q446
+Match,Group by,Performs operations on groups of data;Software that acts as an interface between Python and a database;Package manager for Python;A library that allows Python to connect to MySQL,Performs operations on groups of data,SA_P1_M1_Ch10_Pg126_1,SA_P1_M1_Q447
+Match,Database driver,Performs operations on groups of data;Software that acts as an interface between Python and a database;Package manager for Python;A library that allows Python to connect to MySQL,Software that acts as an interface between Python and a database,SA_P1_M1_Ch10_Pg126_1,SA_P1_M1_Q448
+Match,pip,Performs operations on groups of data;A library that allows Python to connect to MySQL;Package manager for Python;Software that acts as an interface between Python and a database,Package manager for Python,SA_P1_M1_Ch10_Pg126_1,SA_P1_M1_Q449
+Match,Connector,A library that allows Python to connect to MySQL;Package manager for Python;Software that acts as an interface between Python and a database;Performs operations on groups of data,A library that allows Python to connect to MySQL,SA_P1_M1_Ch10_Pg126_1,SA_P1_M1_Q450
+MCQ,Which of the following is used to install the MySQL driver for Python?,rpm;pip;yum;apt-get,pip,SA_P1_M1_Ch10_Pg126_1,SA_P1_M1_Q451
+MCQ,True or False: Group By can only be used on one column.,True;False,FALSE,SA_P1_M1_Ch10_Pg126_1,SA_P1_M1_Q452
+True/False,Python can only connect to MySQL databases.,True;False,FALSE,SA_P1_M1_Ch10_Pg126_1,SA_P1_M1_Q453
+True/False,"To use Group By, the data must be sorted.",True;False,TRUE,SA_P1_M1_Ch10_Pg126_1,SA_P1_M1_Q454
+Blanks,"To get a reference to the test database, we use the ________ method.",,mysql.connector.connect,SA_P1_M1_Ch10_Pg128_1,SA_P1_M1_Q455
+Blanks,"To execute SQL statements, we create a ________ object.",,cursor,SA_P1_M1_Ch10_Pg128_1,SA_P1_M1_Q456
+Blanks,The ________ method is used to commit changes made to database tables permanently.,,db.commit(),SA_P1_M1_Ch10_Pg128_1,SA_P1_M1_Q457
+Match,cursor,Commits changes made to database tables permanently;Used to execute SQL statements;Holds the SQL statement to be executed,Used to execute SQL statements,SA_P1_M1_Ch10_Pg128_1,SA_P1_M1_Q458
+Match,sql_statement,Commits changes made to database tables permanently;Holds the SQL statement to be executed;Used to execute SQL statements,Holds the SQL statement to be executed,SA_P1_M1_Ch10_Pg128_1,SA_P1_M1_Q459
+Match,db.commit(),Used to execute SQL statements;Holds the SQL statement to be executed;Commits changes made to database tables permanently,Commits changes made to database tables permanently,SA_P1_M1_Ch10_Pg128_1,SA_P1_M1_Q460
+MCQ,Which of the following methods is used to get the connection to a MySQL database?,mysql.connector.connect;mysql.connect;cursor.connect,mysql.connector.connect,SA_P1_M1_Ch10_Pg128_1,SA_P1_M1_Q461
+MCQ,Which of the following is not an SQL command?,insert;commit;create table,commit,SA_P1_M1_Ch10_Pg128_1,SA_P1_M1_Q462
+True/False,The cursor object is used to execute SQL statements.,True;False,TRUE,SA_P1_M1_Ch10_Pg128_1,SA_P1_M1_Q463
+True/False,Changes made to database tables are automatically committed by default.,True;False,FALSE,SA_P1_M1_Ch10_Pg128_1,SA_P1_M1_Q464
+Blanks,"In Python, the ______ method is used to execute a SQL statement.",,execute,SA_P1_M1_Ch10_Pg131_1,SA_P1_M1_Q465
+Blanks,"The ______ method returns a list of tuples, where each tuple contains the column values of a row.",,fetchall,SA_P1_M1_Ch10_Pg131_1,SA_P1_M1_Q466
+Match,Cursor,A SQL statement that retrieves data from a table.;A single record in a database table.;A handle to a database table.,A handle to a database table.,SA_P1_M1_Ch10_Pg131_1,SA_P1_M1_Q467
+Match,Select statement,A handle to a database table.;A single record in a database table.;A SQL statement that retrieves data from a table.,A SQL statement that retrieves data from a table.,SA_P1_M1_Ch10_Pg131_1,SA_P1_M1_Q468
+Match,Row,A SQL statement that retrieves data from a table.;A single record in a database table.;A handle to a database table.,A single record in a database table.,SA_P1_M1_Ch10_Pg131_1,SA_P1_M1_Q469
+MCQ,Which of the following methods is not used to connect to a MySQL database from Python?,cursor();connect();execute();fetchall(),fetchall(),SA_P1_M1_Ch10_Pg131_1,SA_P1_M1_Q470
+MCQ,What is the purpose of the 'select *' clause in a SQL statement?,To update data in a table.;To insert data into a table.;To retrieve all columns from a table.;To retrieve specific columns from a table.,To retrieve all columns from a table.,SA_P1_M1_Ch10_Pg131_1,SA_P1_M1_Q471
+True/False,"The fetchall() method returns a list of rows, where each row is represented as a tuple.",True;False,TRUE,SA_P1_M1_Ch10_Pg131_1,SA_P1_M1_Q472
+True/False,The execute() method is used to close a database connection.,True;False,FALSE,SA_P1_M1_Ch10_Pg131_1,SA_P1_M1_Q473
