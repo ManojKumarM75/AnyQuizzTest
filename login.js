@@ -1,5 +1,3 @@
-// login.js
-
 // Function to handle the response from Google Sign-In
 function handleCredentialResponse(response) {
     console.log("Encoded JWT ID token: " + response.credential);
