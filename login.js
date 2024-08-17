@@ -15,7 +15,7 @@ function handleCredentialResponse(response) {
 // Function to send the token to Google Apps Script
 function sendTokenToAppsScript(token, action) {
     var script = document.createElement('script');
-    script.src = `https://script.google.com/macros/s/AKfycbz5LKXzUYGqnBWthl9VdVyZEmwZ5mugenRFOV-VE8DIvtR-DC4U0acnqW0fh0taKshz/exec?callback=handleResponse&token=${encodeURIComponent(token)}&action=${action}`;
+    script.src = `https://script.google.com/macros/s/AKfycbzTh8e0tcyRVAEHj_g3bghsehc2E1q1X0Oa8JzKf48t-dAoBjO6p8vo5p_7kwkIJmhg/exec?callback=handleResponse&token=${encodeURIComponent(token)}&action=${action}`;
     document.body.appendChild(script);
 }
 
