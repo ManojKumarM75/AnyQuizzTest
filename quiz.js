@@ -8,6 +8,29 @@ let cachedQuestions = {};
 const preloadSize = 5;
 let userScore = 0;
 
+// Replace with your actual Web App URL
+const WEBAPP_URL = 'https://script.google.com/macros/s/AKfycbzcvLLJunWssFH2AXGfiWvWMIBqYW2xpuK42FpioJzMhX2J15hpod5lEn9A6of8cVkm/exec';
+
+// Override google.script.run to use our Web App URL
+const googleScriptRun = new Proxy({}, {
+  get: (target, prop) => {
+    return (args) => {
+      return new Promise((resolve, reject) => {
+        fetch(`${WEBAPP_URL}?function=${prop}`, {
+          method: 'POST',
+          body: JSON.stringify(args),
+          headers: {'Content-Type': 'application/json'}
+        })
+        .then(response => response.json())
+        .then(resolve)
+        .catch(reject);
+      });
+    };
+  }
+});
+
+
+
 function loadQuizMetadata() {
   return new Promise((resolve, reject) => {
     google.script.run
