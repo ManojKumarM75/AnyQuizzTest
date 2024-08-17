@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Google Sign-In Example</title>
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        #header {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #f0f0f0;
+        }
+        #user-info {
+            margin-right: 10px;
+        }
+        #login-button {
+            background-color: #4285F4;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+    </style>
+    <script src="login.js"></script>
+</head>
+<body>
+    <div id="header">
+        <div id="user-info"></div>
+        <div id="g_id_onload"
+             data-client_id="44063799736-jl9n0up9qa94t8imacu9r0g4djf81ej1.apps.googleusercontent.com"
+             data-callback="handleCredentialResponse"
+             data-auto_select="false">
+        </div>
+        <div class="g_id_signin" data-type="standard" style="display: none;"></div>
+        <button id="login-button" onclick="handleSignIn()">Sign In</button>
+    </div>
+</body>
+</html>
