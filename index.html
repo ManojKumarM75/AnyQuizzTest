@@ -1,0 +1,1090 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <base target="_top">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Quiz Application</title>
+  <style>
+  body { 
+    font-family: Arial, sans-serif; 
+    margin: 0; 
+    padding: 20px; 
+    line-height: 1.6; 
+    box-sizing: border-box;
+  }
+  .container {
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - 40px); /* Adjust for body padding */
+  }
+  #question-index-container {
+    margin-bottom: 20px;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+  #question-index {
+    display: inline-flex;
+    gap: 5px;
+  }
+  #question-index button {
+    width: 30px;
+    height: 30px;
+    font-size: 12px;
+    padding: 0;
+    margin: 0;
+    flex-shrink: 0;
+  }
+  #main-content {
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+  }
+  #history { 
+    flex: 1;
+    overflow-y: auto; 
+    margin-right: 20px; 
+    border: 1px solid #ddd; 
+    padding: 10px; 
+  }
+  #quiz-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-width: 300px; /* Ensure minimum width for quiz section */
+  }
+  #quiz-container { 
+    margin-bottom: 20px; 
+  }
+  .question { 
+    margin-bottom: 20px; 
+    border: 1px solid #ddd; 
+    padding: 15px; 
+    border-radius: 5px; 
+  }
+  .button-group {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+  button { 
+    padding: 10px 15px; 
+    background-color: #4CAF50; 
+    color: white; 
+    border: none; 
+    border-radius: 4px; 
+    cursor: pointer; 
+  }
+  button:disabled { 
+    background-color: #ddd; 
+    cursor: not-allowed; 
+  }
+  .error { color: red; }
+  input[type="text"], select { 
+    width: 100%; 
+    padding: 8px; 
+    margin-top: 5px; 
+    box-sizing: border-box;
+  }
+  label { display: block; margin-bottom: 5px; }
+  #loading { 
+    display: none; 
+    text-align: center; 
+    padding: 20px; 
+    font-style: italic; 
+  }
+  #result { 
+    margin-top: 20px; 
+    font-weight: bold; 
+  }
+  .correct { color: green; }
+  .incorrect { color: red; }
+  #history table { 
+    width: 100%; 
+    border-collapse: collapse; 
+  }
+  #history th, #history td { 
+    border: 1px solid #ddd; 
+    padding: 8px; 
+    text-align: left; 
+  }
+  #history th { 
+    background-color: #f2f2f2; 
+  }
+  .incorrect-answer {
+    color: red;
+  }
+  @media (max-width: 768px) {
+    #main-content {
+      flex-direction: column;
+    }
+    #history {
+      margin-right: 0;
+      margin-bottom: 20px;
+    }
+    #quiz-section {
+      min-width: auto;
+    }
+  }
+  #loginContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  #loginButton {
+    font-size: 18px;
+    padding: 10px 20px;
+  }
+  #userInfo {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #f0f0f0;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 14px;
+  }
+  #logoutButton {
+    margin-left: 10px;
+    padding: 5px 10px;
+    background-color: #f44336;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+  #feedback-section {
+    font-size: 0.8em;
+    margin-top: 5px;
+    padding: 2px 0;
+    border-top: 1px solid #eee;
+    display: flex;
+    align-items: center;
+  }
+  #feedback-section span {
+    margin-right: 10px;
+    color: #666;
+  }
+  #feedback-section label {
+    margin-right: 15px;
+    color: #444;
+  }
+  #feedback-section input[type="radio"] {
+    margin-right: 5px;
+    vertical-align: middle;
+  }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <div id="loginContainer" style="display: none;">
+      <button id="loginButton" onclick="login()">Sign in with Google</button>
+    </div>
+    
+    <div id="quizContainer" style="display: none;">
+      <div id="userInfo">
+        <span id="userEmail"></span>
+        <button id="logoutButton" onclick="logout()">Logout</button>
+      </div>
+      
+      <div class="container">
+        <div id="question-index-container">
+          <div id="question-index"></div>
+        </div>
+        <div id="main-content">
+          <div id="history">
+            <table>
+              <thead>
+                <tr>
+                  <th>DateTime</th>
+                  <th>Q#</th>
+                  <th>QA_ID</th>
+                  <th>Chunk_ID</th>
+                  <th>Question</th>
+                  <th>Correct Answer</th>
+                  <th>User Answer</th>
+                  <th>Result</th>
+                  <th>Marks</th>
+                </tr>
+              </thead>
+              <tbody id="historyBody">
+              </tbody>
+            </table>
+          </div>
+          <div id="quiz-section">
+            <div id="quiz-container"></div>
+            <div id="loading" style="display: none;">Loading questions...</div>
+            <div class="button-group">
+              <button id="prevBtn" onclick="showPrevious()">Previous</button>
+              <button id="nextBtn" onclick="showNext()">Next</button>
+              <button id="submitBtn" onclick="submitAnswer()">Submit Answer</button>
+            </div>
+            <div id="result"></div>
+          </div>
+        </div>
+      </div>
+
+      <button onclick="showQuizMetadata()">Show Quiz Metadata</button>
+      <br>
+      <textarea id="metadataTextarea" rows="20" cols="80" readonly style="display:none;"></textarea>
+    </div>
+  </div>
+
+  <script>
+
+      let quizMetadata;
+      let currentQuestionIndex = 0;
+      let totalQuestions = 0;
+      let cachedQuestions = {};
+      const preloadSize = 5;
+      let userScore = 0;
+
+      function loadUserInfo() {
+        google.script.run.withSuccessHandler(function(email) {
+          document.getElementById('userEmail').textContent = email;
+        }).getUserEmail();
+      }
+
+      function logout() {
+        google.script.host.close();
+      }
+
+      loadUserInfo();
+
+function provideFeedback(feedbackType) {
+  const feedbackSection = document.getElementById('feedback-section');
+  const question = cachedQuestions[currentQuestionIndex];
+
+  // Immediate feedback
+  feedbackSection.innerHTML = `Flagging as ${feedbackType}...`;
+  feedbackSection.style.color = 'blue';
+  feedbackSection.style.fontStyle = 'italic';
+
+  google.script.run
+    .withSuccessHandler(function(result) {
+      feedbackSection.innerHTML = `Flagged as ${feedbackType}`;
+      feedbackSection.style.color = 'green';
+      
+      // Update the question's feedback in the cache and quizMetadata
+      question.feedback = feedbackType;
+      quizMetadata.combinedData[currentQuestionIndex].feedback = feedbackType;
+
+      // Update the index button immediately
+      updateIndexButtonStyle(currentQuestionIndex);
+      
+      // Move to the next question after a short delay
+      setTimeout(() => {
+        showNext();
+      }, 1000);
+    })
+    .withFailureHandler(function(error) {
+      console.error('Error submitting feedback:', error);
+      feedbackSection.innerHTML = 'Error flagging question';
+      feedbackSection.style.color = 'red';
+    })
+    .submitQuestionFeedback(question.QA_ID, feedbackType);
+}
+
+function updateIndexButtonStyle(index) {
+  const button = document.querySelector(`#question-index button:nth-child(${index + 1})`);
+  const question = quizMetadata.combinedData[index];
+  
+  if (button && question) {
+    if (question.feedback === 'wrong') {
+      button.style.backgroundColor = '#000000';
+      button.style.color = '#ffffff';
+      button.style.outline = 'none';
+    } else if (question.feedback === 'important') {
+      // Keep existing background color, add blue outline
+      button.style.outline = '2px solid blue';
+      button.style.outlineOffset = '-2px';
+    } else {
+      // Reset to default or answer-based style
+      // (You may need to replicate the logic from displayQuestionIndex here)
+    }
+    
+    // Update tooltip
+    button.title = `QA_ID: ${question.QA_ID || 'N/A'}, Chunk_ID: ${question.Chunk_ID || 'N/A'}\nFeedback: ${question.feedback || 'None'}`;
+  }
+}
+
+function showQuizMetadata() {
+  const textarea = document.getElementById('metadataTextarea');
+  
+  if (!quizMetadata || !quizMetadata.combinedData) {
+    textarea.value = "Error: Quiz metadata is not properly loaded.";
+    textarea.style.display = 'block';
+    return;
+  }
+
+  // Prepare the data to display
+  const displayData = {
+    combinedData: quizMetadata.combinedData,
+    totalQuestions: quizMetadata.totalQuestions
+  };
+
+  // Convert to a formatted JSON string
+  const metadataString = JSON.stringify(displayData, null, 2);
+  
+  // Set the textarea content and make it visible
+  textarea.value = metadataString;
+  textarea.style.display = 'block';
+  
+  // Adjust textarea height to fit content
+  textarea.style.height = 'auto';
+  textarea.style.height = textarea.scrollHeight + 'px';
+}
+
+
+
+function loadQuizMetadata() {
+  return new Promise((resolve, reject) => {
+    google.script.run
+      .withSuccessHandler(function(result) {
+        try {
+          console.log('Raw result:', result);
+          quizMetadata = JSON.parse(result);
+          console.log('Parsed quizMetadata:', quizMetadata);
+          if (!Array.isArray(quizMetadata.combinedData)) {
+            throw new Error('combinedData is missing or not an array in quizMetadata');
+          }
+          // Initialize history if it doesn't exist
+          if (!quizMetadata.history) {
+            quizMetadata.history = {};
+          }
+          totalQuestions = quizMetadata.totalQuestions;
+          console.log('Total questions:', totalQuestions);
+          displayQuestionIndex();
+          resolve();
+        } catch (error) {
+          console.error('Error parsing quiz metadata:', error);
+          alert('Error parsing quiz metadata: ' + error.message);
+          reject(error);
+        }
+      })
+      .withFailureHandler(function(error) {
+        console.error('Error loading quiz metadata:', error);
+        alert('Failed to load quiz metadata: ' + error.message);
+        reject(error);
+      })
+      .getQuizMetadata();
+  });
+}
+
+function displayQuestionIndex() {
+  console.log('Displaying question index');
+  const container = document.getElementById('question-index');
+  if (!container) {
+    console.error('Question index container not found');
+    return;
+  }
+  container.innerHTML = '';
+  
+  if (!quizMetadata || !Array.isArray(quizMetadata.combinedData)) {
+    console.error('Quiz metadata or combinedData is missing or invalid');
+    container.innerHTML = '<p>Error: Unable to display question index</p>';
+    return;
+  }
+  
+  quizMetadata.combinedData.forEach((question, index) => {
+    try {
+      const button = document.createElement('button');
+      button.textContent = index + 1;
+      button.onclick = () => jumpToQuestion(index);
+      
+      // Set default style
+      let backgroundColor = '#f0f0f0'; // Light gray background (default)
+      let textColor = '#000000'; // Black text (default)
+      
+      // Check for historical data
+      if (question.LastAnswer) {
+        if (question.LastAnswer === 'Correct') {
+          backgroundColor = question.IncorrectAnswers > 0 ? '#90EE90' : '#006400';
+        } else {
+          backgroundColor = question.CorrectAnswers > 0 ? '#FFA07A' : '#8B0000';
+        }
+        textColor = '#ffffff'; // White text for answered questions
+      }
+      
+      // Apply feedback styles
+      if (question.Feedback === 'wrong') {
+        backgroundColor = '#000000'; // Black background for wrong questions
+        textColor = '#ffffff'; // White text for visibility
+      } else if (question.Feedback === 'important') {
+        button.style.outline = '2px solid blue'; // Blue outline for important questions
+        button.style.outlineOffset = '-2px'; // Adjust outline to fit button size
+      }
+      
+      button.style.backgroundColor = backgroundColor;
+      button.style.color = textColor;
+      
+      // Keep existing button size styles
+      button.style.width = '25px';
+      button.style.height = '25px';
+      button.style.fontSize = '10px';
+      button.style.padding = '0';
+      button.style.margin = '2px';
+      
+      // Update tooltip with all available information
+      button.title = `QA_ID: ${question.QA_ID || 'N/A'}, Chunk_ID: ${question.Chunk_ID || 'N/A'}
+Correct: ${question.CorrectAnswers}, Incorrect: ${question.IncorrectAnswers}
+Last Answered: ${question.LastTime ? new Date(question.LastTime).toLocaleString() : 'N/A'}
+Feedback: ${question.Feedback || 'None'}`;
+      
+      container.appendChild(button);
+    } catch (error) {
+      console.error(`Error creating button for question ${index}:`, error);
+    }
+  });
+
+  console.log(`Displayed ${quizMetadata.combinedData.length} question index buttons`);
+}
+
+
+function displayQuestionIndex1() {
+  console.log('Displaying question index');
+  const container = document.getElementById('question-index');
+  if (!container) {
+    console.error('Question index container not found');
+    return;
+  }
+  container.innerHTML = '';
+  
+  if (!quizMetadata || !Array.isArray(quizMetadata.combinedData)) {
+    console.error('Quiz metadata or combinedData is missing or invalid');
+    container.innerHTML = '<p>Error: Unable to display question index</p>';
+    return;
+  }
+  
+  quizMetadata.combinedData.forEach((question, index) => {
+    try {
+      const button = document.createElement('button');
+      button.textContent = index + 1;
+      button.onclick = () => jumpToQuestion(index);
+      button.title = `QA_ID: ${question.QA_ID || 'N/A'}, Chunk_ID: ${question.Chunk_ID || 'N/A'}`;
+      
+      // Set default style
+      let backgroundColor = '#f0f0f0'; // Light gray background (default)
+      let textColor = '#000000'; // Black text (default)
+      
+      // Check for historical data
+      if (question.LastAnswer) {
+        if (question.LastAnswer === 'Correct') {
+          if (question.IncorrectAnswers > 0) {
+            backgroundColor = '#90EE90'; // Light green
+          } else {
+            backgroundColor = '#006400'; // Dark green
+          }
+        } else {
+          if (question.CorrectAnswers > 0) {
+            backgroundColor = '#FFA07A'; // Light red
+          } else {
+            backgroundColor = '#8B0000'; // Dark red
+          }
+        }
+        textColor = '#ffffff'; // White text for answered questions
+      }
+      
+      // Apply feedback styles
+      if (question.feedback === 'wrong') {
+        backgroundColor = '#000000'; // Black background for wrong questions
+        textColor = '#ffffff'; // White text for visibility
+      } else if (question.feedback === 'important') {
+        button.style.outline = '2px solid blue'; // Blue outline for important questions
+        button.style.outlineOffset = '-2px'; // Adjust outline to fit button size
+      }
+      
+      button.style.backgroundColor = backgroundColor;
+      button.style.color = textColor;
+      
+      // Keep existing button size styles
+      button.style.width = '25px';
+      button.style.height = '25px';
+      button.style.fontSize = '10px';
+      button.style.padding = '0';
+      button.style.margin = '2px';
+      
+      // Update tooltip with feedback information
+      button.title += `\nFeedback: ${question.feedback || 'None'}`;
+      
+      container.appendChild(button);
+    } catch (error) {
+      console.error(`Error creating button for question ${index}:`, error);
+    }
+  });
+
+  console.log(`Displayed ${quizMetadata.combinedData.length} question index buttons`);
+}
+
+
+
+
+function displayQuestionIndex1() {
+  console.log('Displaying question index');
+  const container = document.getElementById('question-index');
+  if (!container) {
+    console.error('Question index container not found');
+    return;
+  }
+  container.innerHTML = '';
+  
+  if (!quizMetadata || !Array.isArray(quizMetadata.combinedData)) {
+    console.error('Quiz metadata or combinedData is missing or invalid');
+    container.innerHTML = '<p>Error: Unable to display question index</p>';
+    return;
+  }
+  
+  quizMetadata.combinedData.forEach((question, index) => {
+    try {
+      const button = document.createElement('button');
+      button.textContent = index + 1;
+      button.onclick = () => jumpToQuestion(index);
+      button.title = `QA_ID: ${question.QA_ID || 'N/A'}, Chunk_ID: ${question.Chunk_ID || 'N/A'}`;
+      
+      // Set default style
+      let backgroundColor = '#f0f0f0'; // Light gray background (default)
+      let textColor = '#000000'; // Black text (default)
+      
+      // Check for historical data
+      if (question.LastAnswer) {
+        if (question.LastAnswer === 'Correct') {
+          if (question.IncorrectAnswers > 0) {
+            backgroundColor = '#90EE90'; // Light green
+          } else {
+            backgroundColor = '#006400'; // Dark green
+          }
+        } else {
+          if (question.CorrectAnswers > 0) {
+            backgroundColor = '#FFA07A'; // Light red
+          } else {
+            backgroundColor = '#8B0000'; // Dark red
+          }
+        }
+        textColor = '#ffffff'; // White text for answered questions
+      }
+      
+      button.style.backgroundColor = backgroundColor;
+      button.style.color = textColor;
+      
+      // Make buttons smaller
+      button.style.width = '25px';
+      button.style.height = '25px';
+      button.style.fontSize = '10px';
+      button.style.padding = '0';
+      button.style.margin = '2px';
+      
+      // Add tooltip with additional information
+      button.title += `\nCorrect: ${question.CorrectAnswers}, Incorrect: ${question.IncorrectAnswers}\nLast Answered: ${new Date(question.LastTime).toLocaleString()}`;
+      
+      container.appendChild(button);
+    } catch (error) {
+      console.error(`Error creating button for question ${index}:`, error);
+    }
+  });
+
+  console.log(`Displayed ${quizMetadata.combinedData.length} question index buttons`);
+}
+
+
+
+
+
+
+      async function loadQuestions(startIndex, isPreload = false) {
+        return new Promise((resolve, reject) => {
+          if (!isPreload) {
+            document.getElementById('loading').style.display = 'block';
+            document.getElementById('quiz-container').style.display = 'none';
+          }
+
+          google.script.run
+            .withSuccessHandler(function(result) {
+              try {
+                const data = JSON.parse(result);
+                data.questions.forEach((q, i) => {
+                  cachedQuestions[startIndex + i] = q;
+                });
+                if (!isPreload) {
+                  document.getElementById('loading').style.display = 'none';
+                  document.getElementById('quiz-container').style.display = 'block';
+                }
+                resolve();
+              } catch (error) {
+                console.error('Error parsing result:', error);
+                reject(error);
+              }
+            })
+            .withFailureHandler(function(error) {
+              console.error('Server error:', error);
+              reject(error);
+            })
+            .getQuestions(startIndex, preloadSize);
+        });
+      }
+
+function displayQuestion(question) {
+  console.log('Displaying question:', question);  // Log the entire question object
+  const container = document.getElementById('quiz-container');
+  container.innerHTML = '';
+  
+  const questionDiv = document.createElement('div');
+  questionDiv.className = 'question';
+  questionDiv.innerHTML = `<h3>Question ${currentQuestionIndex + 1}</h3>`;
+
+  switch(question.Type) {
+    case 'Blanks':
+      questionDiv.innerHTML += `
+        <p>${question.Question}</p>
+        <input type="text" id="answer" placeholder="Your answer">
+      `;
+      document.getElementById('submitBtn').style.display = 'inline-block';
+      break;
+    case 'Match':
+      const options = question.Options.split(';');
+      questionDiv.innerHTML += `
+        <p>${question.Question}</p>
+        <select id="answer" onchange="handleAutoSubmit()">
+          <option value="">Select an answer</option>
+          ${options.map(opt => `<option value="${opt}">${opt}</option>`).join('')}
+        </select>
+      `;
+      document.getElementById('submitBtn').style.display = 'none';
+      break;
+    case 'MCQ':
+      const mcqOptions = question.Options.split(';');
+      questionDiv.innerHTML += `
+        <p>${question.Question}</p>
+        ${mcqOptions.map((opt, optIndex) => `
+          <label>
+            <input type="radio" name="answer" value="${opt}" onchange="handleAutoSubmit()">
+            ${opt}
+          </label><br>
+        `).join('')}
+      `;
+      document.getElementById('submitBtn').style.display = 'none';
+      break;
+    case 'True/False':
+      questionDiv.innerHTML += `
+        <p>${question.Question}</p>
+        <label><input type="radio" name="answer" value="True" onchange="handleAutoSubmit()"> True</label><br>
+        <label><input type="radio" name="answer" value="False" onchange="handleAutoSubmit()"> False</label>
+      `;
+      document.getElementById('submitBtn').style.display = 'none';
+      break;
+    default:
+      questionDiv.innerHTML += `<p>Unsupported question type: ${question.Type}</p>`;
+  }
+
+  // Get feedback from metadata
+  const metadataQuestion = quizMetadata.combinedData[currentQuestionIndex];
+  const feedbackStatus = metadataQuestion.Feedback || 'Not rated';
+  console.log('Feedback status from metadata:', feedbackStatus);  // Log the feedback status
+
+  questionDiv.innerHTML += `
+    <p>Feedback: ${feedbackStatus}</p>
+    <div id="feedback-section">
+      <span>Flag Question as:</span>
+      <label><input type="radio" name="feedback" value="important" onchange="provideFeedback('important')">Important</label>
+      <label><input type="radio" name="feedback" value="wrong" onchange="provideFeedback('wrong')">Wrong</label>
+      <label><input type="radio" name="feedback" value="ok" onchange="provideFeedback('ok')">OK</label>
+    </div>
+  `;
+
+  container.appendChild(questionDiv);
+
+  // Set the correct radio button based on the metadata feedback
+  if (metadataQuestion.Feedback) {
+    const feedbackRadio = document.querySelector(`input[name="feedback"][value="${metadataQuestion.Feedback}"]`);
+    console.log('Found feedback radio button:', feedbackRadio);  // Log the found radio button
+    if (feedbackRadio) {
+      feedbackRadio.checked = true;
+      console.log('Set radio button to checked:', metadataQuestion.Feedback);  // Log that we've set the radio button
+    }
+  } else {
+    console.log('No feedback data available for this question in metadata');
+  }
+}
+
+
+function displayQuestion1(question) {
+  const container = document.getElementById('quiz-container');
+  container.innerHTML = '';
+  
+  const questionDiv = document.createElement('div');
+  questionDiv.className = 'question';
+  questionDiv.innerHTML = `<h3>Question ${currentQuestionIndex + 1}</h3>`;
+
+  switch(question.Type) {
+    case 'Blanks':
+      questionDiv.innerHTML += `
+        <p>${question.Question}</p>
+        <input type="text" id="answer" placeholder="Your answer">
+      `;
+      document.getElementById('submitBtn').style.display = 'inline-block';
+      break;
+    case 'Match':
+      const options = question.Options.split(';');
+      questionDiv.innerHTML += `
+        <p>${question.Question}</p>
+        <select id="answer" onchange="handleAutoSubmit()">
+          <option value="">Select an answer</option>
+          ${options.map(opt => `<option value="${opt}">${opt}</option>`).join('')}
+        </select>
+      `;
+      document.getElementById('submitBtn').style.display = 'none';
+      break;
+    case 'MCQ':
+      const mcqOptions = question.Options.split(';');
+      questionDiv.innerHTML += `
+        <p>${question.Question}</p>
+        ${mcqOptions.map((opt, optIndex) => `
+          <label>
+            <input type="radio" name="answer" value="${opt}" onchange="handleAutoSubmit()">
+            ${opt}
+          </label><br>
+        `).join('')}
+      `;
+      document.getElementById('submitBtn').style.display = 'none';
+      break;
+    case 'True/False':
+      questionDiv.innerHTML += `
+        <p>${question.Question}</p>
+        <label><input type="radio" name="answer" value="True" onchange="handleAutoSubmit()"> True</label><br>
+        <label><input type="radio" name="answer" value="False" onchange="handleAutoSubmit()"> False</label>
+      `;
+      document.getElementById('submitBtn').style.display = 'none';
+      break;
+    default:
+      questionDiv.innerHTML += `<p>Unsupported question type: ${question.Type}</p>`;
+  }
+
+  // Add feedback status display and radio buttons
+  const feedbackStatus = question.Feedback || 'Not rated';
+  questionDiv.innerHTML += `
+    <p>Feedback: ${feedbackStatus}</p>
+    <div id="feedback-section">
+      <span>Flag Question as:</span>
+      <label><input type="radio" name="feedback" value="important" onchange="provideFeedback('important')">Important</label>
+      <label><input type="radio" name="feedback" value="wrong" onchange="provideFeedback('wrong')">Wrong</label>
+      <label><input type="radio" name="feedback" value="ok" onchange="provideFeedback('ok')">OK</label>
+    </div>
+  `;
+
+  container.appendChild(questionDiv);
+
+  // Set the correct radio button based on the current feedback
+  if (question.Feedback) {
+    const feedbackRadio = document.querySelector(`input[name="feedback"][value="${question.Feedback}"]`);
+    if (feedbackRadio) {
+      feedbackRadio.checked = true;
+    }
+  }
+}
+
+
+  
+
+
+    function updateButtons(disabled = false) {
+      const prevBtn = document.getElementById('prevBtn');
+      const nextBtn = document.getElementById('nextBtn');
+      const submitBtn = document.getElementById('submitBtn');
+
+      prevBtn.style.display = 'inline-block';
+      nextBtn.style.display = 'inline-block';
+      submitBtn.style.display = 'inline-block';
+
+      prevBtn.disabled = disabled || currentQuestionIndex === 0;
+      nextBtn.disabled = disabled || currentQuestionIndex >= totalQuestions - 1;
+      submitBtn.disabled = disabled;
+
+      // Hide submit button for auto-submit question types
+      const currentQuestion = cachedQuestions[currentQuestionIndex];
+      if (currentQuestion && ['Match', 'MCQ', 'True/False'].includes(currentQuestion.Type)) {
+        submitBtn.style.display = 'none';
+      }
+    }
+
+      async function ensureQuestionsLoaded(index) {
+        const startIndex = Math.floor(index / preloadSize) * preloadSize;
+        if (!cachedQuestions[startIndex]) {
+          await loadQuestions(startIndex, index !== currentQuestionIndex);
+        }
+      }
+async function showNext() {
+  if (currentQuestionIndex < totalQuestions - 1) {
+    currentQuestionIndex++;
+    await ensureQuestionsLoaded(currentQuestionIndex);
+    displayQuestion(cachedQuestions[currentQuestionIndex]);
+    updateButtons();
+    // Preload next set
+    ensureQuestionsLoaded(currentQuestionIndex + preloadSize);
+  } else {
+    // Quiz finished
+    const resultDiv = document.getElementById('result');
+    resultDiv.innerHTML = `<h2>Quiz Completed!</h2>
+      <p>Your final score: ${userScore}/${totalQuestions}</p>`;
+    document.getElementById('submitBtn').style.display = 'none';
+  }
+}
+
+    async function showPrevious() {
+      if (currentQuestionIndex > 0) {
+        currentQuestionIndex--;
+        await ensureQuestionsLoaded(currentQuestionIndex);
+        displayQuestion(cachedQuestions[currentQuestionIndex]);
+        updateButtons();
+      }
+    }
+
+      async function jumpToQuestion(index) {
+        currentQuestionIndex = index;
+        await ensureQuestionsLoaded(currentQuestionIndex);
+        displayQuestion(cachedQuestions[currentQuestionIndex]);
+        updateButtons();
+      }
+
+      function cleanAnswer(answer) {
+        // Convert to string first
+        let cleanedAnswer = String(answer);
+        
+        // Remove brackets, single quotes, and trim
+        cleanedAnswer = cleanedAnswer.replace(/^\[|\]$/g, '').replace(/^'|'$/g, '').trim();
+        
+        // Convert to lowercase
+        return cleanedAnswer.toLowerCase();
+      }
+
+
+
+      function getUserAnswer() {
+        const question = cachedQuestions[currentQuestionIndex];
+        switch(question.Type) {
+          case 'Blanks':
+          case 'Match':
+            return document.getElementById('answer').value;
+          case 'MCQ':
+          case 'True/False':
+            const selectedRadio = document.querySelector('input[name="answer"]:checked');
+            return selectedRadio ? selectedRadio.value : '';
+        }
+      }
+
+
+      async function handleAutoSubmit() {
+        const question = cachedQuestions[currentQuestionIndex];
+        if (['Match', 'MCQ', 'True/False'].includes(question.Type)) {
+          await submitAnswer();
+          updateButtons(false); // Ensure buttons are re-enabled after auto-submit
+        }
+      }
+
+      function updateHistory(question, userAnswer, isCorrect) {
+        const historyBody = document.getElementById('historyBody');
+        const row = historyBody.insertRow(0);  // Insert at the top
+        
+        const now = new Date();
+        const dateTime = now.toLocaleString();
+        
+        const cells = [
+          dateTime,
+          currentQuestionIndex + 1,
+          question.QA_ID || 'N/A',
+          question.Chunk_ID || 'N/A',
+          question.Question,
+          question.Answer,
+          userAnswer,
+          isCorrect ? 'Correct' : 'Incorrect',
+          isCorrect ? '1' : '0'
+        ];
+
+        cells.forEach((cell, index) => {
+          const td = row.insertCell(index);
+          td.textContent = cell;
+          if (index === 6 && !isCorrect) {  // User Answer column
+            td.classList.add('incorrect-answer');
+          }
+        });
+
+        // Scroll to the top of the history div
+        const historyDiv = document.getElementById('history');
+        historyDiv.scrollTop = 0;
+
+        // Update the question index button
+        const button = document.querySelector(`#question-index button:nth-child(${currentQuestionIndex + 1})`);
+        if (button) {
+          button.style.backgroundColor = isCorrect ? 'green' : 'red';
+        }
+
+        // Update the quizMetadata history
+        quizMetadata.history[question.QA_ID] = isCorrect ? 'Correct' : 'Incorrect';
+
+        // Write to Google Sheet
+        console.log('Attempting to write to Google Sheet...');
+        google.script.run
+          .withSuccessHandler(function(result) {
+            console.log("Data successfully written to sheet:", result);
+          })
+          .withFailureHandler(function(error) {
+            console.error("Error writing to sheet:", error);
+            alert("Failed to save answer to Google Sheet. Please check your connection and try again.");
+          })
+          .writeToUserAnswers({
+            dateTime: dateTime,
+            questionNumber: currentQuestionIndex + 1,
+            qaId: question.QA_ID || 'N/A',
+            chunkId: question.Chunk_ID || 'N/A',
+            question: question.Question,
+            correctAnswer: question.Answer,
+            userAnswer: userAnswer,
+            result: isCorrect ? 'Correct' : 'Incorrect',
+            marks: isCorrect ? '1' : '0'
+          });
+      }
+
+  async function submitAnswer() {
+    console.log('Submitting answer for question:', currentQuestionIndex);
+    
+    if (!quizMetadata) {
+      console.error('quizMetadata is undefined. Attempting to reinitialize...');
+      try {
+        await loadQuizMetadata();
+      } catch (error) {
+        console.error('Failed to reinitialize quizMetadata:', error);
+        alert('An error occurred. Please refresh the page and try again.');
+        return;
+      }
+    }
+    const rawUserAnswer = getUserAnswer();
+    if (rawUserAnswer === null || rawUserAnswer === undefined || rawUserAnswer === '') {
+      alert('Please provide an answer before submitting.');
+      return;
+    }
+
+    updateButtons(true); // Disable all buttons
+
+    const question = cachedQuestions[currentQuestionIndex];
+    const correctAnswer = cleanAnswer(question.Answer);
+    const userAnswer = cleanAnswer(rawUserAnswer);
+    let isCorrect = false;
+
+    switch(question.Type) {
+      case 'Blanks':
+      case 'Match':
+      case 'MCQ':
+        isCorrect = userAnswer.toLowerCase() === correctAnswer.toLowerCase();
+        break;
+      case 'True/False':
+        isCorrect = userAnswer === correctAnswer;
+        break;
+    }
+
+    updateHistory(question, userAnswer, isCorrect);
+      console.log('Updating history for question:', question);
+      const resultDiv = document.getElementById('result');
+      if (isCorrect) {
+        resultDiv.innerHTML = '<p class="correct">Correct!</p>';
+        userScore++;
+      } else {
+        resultDiv.innerHTML = `<p class="incorrect">Incorrect. The correct answer is: ${correctAnswer}</p>`;
+      }
+      resultDiv.innerHTML += `<p>Your current score: ${userScore}/${currentQuestionIndex + 1}</p>`;
+
+      // Display result for 1 second, then move to next question
+      await new Promise(resolve => setTimeout(resolve, 1000));
+      resultDiv.innerHTML = '';
+      
+      if (currentQuestionIndex < totalQuestions - 1) {
+        await showNext();
+      } else {
+        // Quiz finished
+        resultDiv.innerHTML = `<h2>Quiz Completed!</h2>
+          <p>Your final score: ${userScore}/${totalQuestions}</p>`;
+        document.getElementById('submitBtn').style.display = 'none';
+      }
+
+      updateButtons(false); // Re-enable buttons
+
+
+      // Update the quizMetadata history
+      try {
+        if (!quizMetadata) {
+          console.error('quizMetadata is undefined');
+          quizMetadata = { history: {} };
+        }
+        if (!quizMetadata.history) {
+          console.warn('quizMetadata.history is undefined, initializing it');
+          quizMetadata.history = {};
+        }
+        if (question.QA_ID) {
+          quizMetadata.history[question.QA_ID] = isCorrect ? 'Correct' : 'Incorrect';
+        } else {
+          console.warn('Question QA_ID is undefined');
+        }
+      } catch (error) {
+        console.error('Error updating quizMetadata history:', error);
+      }
+
+  }
+
+    
+    // Your JavaScript code here
+    // (Include all the functions like loadQuizMetadata, displayQuestion, submitAnswer, etc.)
+
+    function checkAuthStatus() {
+      google.script.run
+        .withSuccessHandler(function(email) {
+          if (email) {
+            document.getElementById('loginContainer').style.display = 'none';
+            document.getElementById('quizContainer').style.display = 'block';
+            loadUserInfo(email);
+            initializeQuiz();
+          } else {
+            document.getElementById('loginContainer').style.display = 'block';
+            document.getElementById('quizContainer').style.display = 'none';
+          }
+        })
+        .getUserEmail();
+    }
+
+    function login() {
+      google.script.run
+        .withSuccessHandler(function(url) {
+          window.top.location.href = url;
+        })
+        .getAuthorizationUrl();
+    }
+
+    function loadUserInfo(email) {
+      document.getElementById('userEmail').textContent = email;
+    }
+
+    function logout() {
+      google.script.host.close();
+    }
+
+    // Call this function when the page loads
+    window.onload = checkAuthStatus;
+
+    // Include all your other existing functions here
+    // (initializeQuiz, submitAnswer, showNext, showPrevious, etc.)
+
+    
+      // Initial load
+    async function initializeQuiz() {
+      await loadQuizMetadata();
+      totalQuestions = quizMetadata.totalQuestions;
+      displayQuestionIndex();
+      await loadQuestions(0);
+      displayQuestion(cachedQuestions[0]);
+      updateButtons();
+      // Preload next set
+      ensureQuestionsLoaded(preloadSize);
+    }
+
+
+      initializeQuiz();
+    </script>
+ 
+</body>
+</html>
