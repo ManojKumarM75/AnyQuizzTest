@@ -39,29 +39,19 @@
 <body>
     <div id="header">
         <div id="user-info"></div>
+        <div id="g_id_onload"
+             data-client_id="44063799736-jl9n0up9qa94t8imacu9r0g4djf81ej1.apps.googleusercontent.com"
+             data-callback="handleCredentialResponse"
+             data-auto_select="false">
+        </div>
+        <div class="g_id_signin" data-type="standard" style="display: none;"></div>
         <button id="login-button" onclick="handleSignIn()">Sign In</button>
         <button id="logout-button" onclick="handleSignOut()">Sign Out</button>
     </div>
     <div id="message"></div>
 
     <script>
-    let currentUser = null;
-
-    window.onload = function() {
-        google.accounts.id.initialize({
-            client_id: "44063799736-jl9n0up9qa94t8imacu9r0g4djf81ej1.apps.googleusercontent.com",
-            callback: handleCredentialResponse,
-            auto_select: false
-        });
-    }
-
     function handleCredentialResponse(response) {
-        if (response.error) {
-            console.error("Sign-in error:", response.error);
-            document.getElementById('message').textContent = "Sign-in failed. Please try again.";
-            showManualSignInButton();
-            return;
-        }
         console.log("Encoded JWT ID token: " + response.credential);
         sendTokenToAppsScript(response.credential, 'login');
         updateUIAfterSignIn(response.credential);
@@ -80,57 +70,23 @@
 
     function updateUIAfterSignIn(token) {
         const payload = JSON.parse(atob(token.split('.')[1]));
-        currentUser = { email: payload.email, name: payload.name };
-        document.getElementById('user-info').textContent = currentUser.name;
+        document.getElementById('user-info').textContent = payload.name;
         document.getElementById('user-info').style.display = 'block';
         document.getElementById('login-button').style.display = 'none';
         document.getElementById('logout-button').style.display = 'inline-block';
     }
 
     function handleSignIn() {
-        google.accounts.id.prompt((notification) => {
-            if (notification.isNotDisplayed() || notification.isSkippedMoment()) {
-                console.log('Sign-in prompt was not displayed or was skipped');
-                showManualSignInButton();
-            }
-        });
+        document.querySelector('.g_id_signin div[role=button]').click();
     }
 
     function handleSignOut() {
-        if (currentUser && currentUser.email) {
-            google.accounts.id.revoke(currentUser.email, done => {
-                console.log('consent revoked');
-                sendTokenToAppsScript('', 'logout');
-                resetUI();
-            });
-        } else {
-            resetUI();
-        }
-    }
-
-    function resetUI() {
-        currentUser = null;
+        google.accounts.id.disableAutoSelect();
+        sendTokenToAppsScript('', 'logout');
         document.getElementById('user-info').style.display = 'none';
         document.getElementById('login-button').style.display = 'inline-block';
         document.getElementById('logout-button').style.display = 'none';
         document.getElementById('message').textContent = '';
-    }
-
-    function showManualSignInButton() {
-        const existingButton = document.getElementById('manual-signin');
-        if (!existingButton) {
-            const button = document.createElement('button');
-            button.id = 'manual-signin';
-            button.textContent = 'Sign in with Google';
-            button.onclick = handleSignIn;
-            button.style.backgroundColor = '#4285F4';
-            button.style.color = 'white';
-            button.style.border = 'none';
-            button.style.padding = '10px 20px';
-            button.style.cursor = 'pointer';
-            button.style.marginLeft = '10px';
-            document.getElementById('header').appendChild(button);
-        }
     }
     </script>
 </body>
