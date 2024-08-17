@@ -1,6 +1,6 @@
 function handleCredentialResponse(response) {
     console.log("Encoded JWT ID token: " + response.credential);
-    updateUIMessage("Logging in...");
+    updateButtonText("Logging in...");
     sendTokenToAppsScript(response.credential, 'login');
 }
 
@@ -15,29 +15,29 @@ function handleResponse(data) {
     
     if (data.action === 'login') {
         if (data.error) {
+            updateButtonText('Sign In');
             updateUIMessage('Login failed: ' + data.error);
-            resetUI();
         } else {
-            updateUIMessage('Logged in as: ' + data.email);
-            document.getElementById('logout-button').style.display = 'inline-block';
+            updateUIMessage(data.email);
+            updateButtonText('Sign Out');
+            document.getElementById('login-button').onclick = handleSignOut;
         }
     } else if (data.action === 'logout') {
-        updateUIMessage(data.message);
-        setTimeout(resetUI, 2000);  // Reset UI after 2 seconds
+        updateButtonText(data.message);
+        setTimeout(() => {
+            updateUIMessage('');
+            updateButtonText('Sign In');
+            document.getElementById('login-button').onclick = handleSignIn;
+        }, 2000);
     }
 }
 
 function updateUIMessage(message) {
     document.getElementById('user-info').textContent = message;
-    document.getElementById('user-info').style.display = 'block';
-    document.getElementById('login-button').style.display = 'none';
 }
 
-function resetUI() {
-    document.getElementById('user-info').textContent = '';
-    document.getElementById('user-info').style.display = 'none';
-    document.getElementById('login-button').style.display = 'inline-block';
-    document.getElementById('logout-button').style.display = 'none';
+function updateButtonText(text) {
+    document.getElementById('login-button').textContent = text;
 }
 
 function handleSignIn() {
@@ -46,7 +46,7 @@ function handleSignIn() {
 
 function handleSignOut() {
     google.accounts.id.disableAutoSelect();
-    updateUIMessage('Logging Out...');
+    updateButtonText('Logging Out...');
     sendTokenToAppsScript('', 'logout');
 }
 
