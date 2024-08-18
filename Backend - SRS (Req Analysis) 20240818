@@ -1,0 +1,19 @@
+20240818
+What are the data required from / to backend db.
+
+1.Metadata: 
+  when the user selects the course, modules, textbook, chapters....this information and the mode (automatic, sequential) is send to backend. The appscript would query the QA and UA and FA, to get the list of QA metadata. However, As the metadata contains QA_ID, Correct/Incorrect, Last time etc...not sure how many metadata rows should be send back.
+
+2. Initial nos of Questions and answers to be send, when user logs in and selects the course?. Can be 5 and then 10 each when less than 5 are available on client. How many Qa is optimum.
+
+3. QA to be send next (n nos, based on the selections + mode)
+
+4. Feedbacks to be stored immediately or can store teporarily at client and then bulk stored along with answwrs....every 3 mins or 10 QA
+
+5. Answers submitted....as above...temp and bulk store?
+
+6. Users can upload pdf, should get the realtime status (every 25 secs with a loader)...how much time to start converting to QA, how much time pending to finish.
+
+7. They should have an option to make it public the pdf & quizz or only quizz or personal both.
+
+8
